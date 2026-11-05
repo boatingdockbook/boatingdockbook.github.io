@@ -8,8 +8,13 @@
 <meta property="og:title" content="Boating Dockbook">
 <meta property="og:description" content="Everything about your boat, in one app. On iPhone and iPad.">
 <meta property="og:image" content="https://boatingdockbook.github.io/images/shot-01.jpg">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
-<link rel="apple-touch-icon" href="images/icon-180.png">
+<link rel="alternate" hreflang="en" href="https://boatingdockbook.github.io/">
+<link rel="alternate" hreflang="fr" href="https://boatingdockbook.github.io/fr/">
+<link rel="alternate" hreflang="it" href="https://boatingdockbook.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://boatingdockbook.github.io/es/">
+<link rel="alternate" hreflang="x-default" href="https://boatingdockbook.github.io/">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -68,6 +73,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--on-night-2)}
 .nav a{text-decoration:none}
 .nav a:hover{color:var(--on-night)}
+.lang a{color:inherit;text-decoration:none;padding:2px 2px}
+.lang a[aria-current]{color:#E6C483;font-weight:600}
+.lang a:hover{color:#fff}
 .lang{font-family:var(--mono);font-size:12px;letter-spacing:.08em;border:1px solid #2C4A6C;border-radius:8px;padding:5px 8px;color:var(--on-night-2)}
 @media (max-width:820px){.nav .hide-sm{display:none}}
 
@@ -205,7 +213,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
       <a class="hide-sm" href="#features">Features</a>
       <a class="hide-sm" href="#compare">Why Dockbook</a>
       <a class="hide-sm" href="#faq">FAQ</a>
-      <span class="lang" title="Also in French, Italian and Spanish">EN · FR · IT · ES</span>
+      <nav class="lang" aria-label="Language"><a href="/" lang="en" aria-current="page">EN</a> · <a href="/fr/" lang="fr">FR</a> · <a href="/it/" lang="it">IT</a> · <a href="/es/" lang="es">ES</a></nav>
     </nav>
   </div>
 </header>
@@ -232,7 +240,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
   <div class="wrap">
     <div>
       <div class="hero-logo">
-        <img src="images/icon-180.png" width="104" height="104" alt="">
+        <img src="/images/icon-180.png" width="104" height="104" alt="">
         <span class="brand-name"><span class="brand-small">BOATING</span><span class="brand-big">Dockbook</span></span>
       </div>
       <p class="eyebrow">The logbook for powerboats and sailboats</p>
@@ -246,7 +254,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
       </div>
       <p class="fix">45°31′N 73°34′W · DEPTHS IN FEET · NOT FOR NAVIGATION</p>
     </div>
-    <div class="shot wake"><img src="images/shot-01.jpg" alt="Dockbook’s Trips screen: the season’s distance, the latest trip with its map, weather and crew" width="620" height="1006"></div>
+    <div class="shot wake"><img src="/images/shot-01.jpg" alt="Dockbook’s Trips screen: the season’s distance, the latest trip with its map, weather and crew" width="620" height="1006"></div>
   </div>
 </section>
 
@@ -269,7 +277,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
           <li>A logbook page you can share as a PDF, and a replay on the map</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-02.jpg" alt="Recording a trip: the track on a chart, speed, heading, distance and time underway"></div></div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-02.jpg" alt="Recording a trip: the track on a chart, speed, heading, distance and time underway"></div></div>
     </article>
 
     <article class="feat flip">
@@ -283,7 +291,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
           <li>Map, marine chart or satellite under the circle</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-03.jpg" alt="The anchor watch: the swing circle on the chart, distance from the anchor and the alarm radius"></div></div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-03.jpg" alt="The anchor watch: the swing circle on the chart, distance from the anchor and the alarm radius"></div></div>
     </article>
 
     <article class="feat">
@@ -297,7 +305,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
           <li>The best time to leave along a planned route</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-04.jpg" alt="The weather map on Lake Champlain: wind arrows, wave heights and a buoy reading marked rough for this boat, with one time slider"></div></div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-04.jpg" alt="The weather map on Lake Champlain: wind arrows, wave heights and a buoy reading marked rough for this boat, with one time slider"></div></div>
     </article>
 
     <article class="feat flip">
@@ -311,7 +319,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
           <li>The real cost per hour and per season, insurance and slip included</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-05.jpg" alt="Service intervals by engine hours and by date, with what is due soon"></div></div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-05.jpg" alt="Service intervals by engine hours and by date, with what is due soon"></div></div>
     </article>
 
     <article class="feat">
@@ -325,7 +333,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
           <li>A safety checklist to print or show on the phone</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-06.jpg" alt="Papers and safety: insurance, licence and operator card with their dates, and the safety equipment aboard"></div></div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-06.jpg" alt="Papers and safety: insurance, licence and operator card with their dates, and the safety equipment aboard"></div></div>
     </article>
   </div>
 </section>
@@ -338,16 +346,16 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
       <h2 id="gal-h">Your whole season, one tap away</h2>
     </div>
     <div class="gallery" tabindex="0" aria-label="Screenshots, scroll sideways">
-      <figure><div class="shot"><img loading="lazy" src="images/shot-07.jpg" alt="Planning a route on the marine chart with numbered waypoints"></div><figcaption><b>Plan a route</b>Waypoints on the marine chart, distance, time and fuel.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-12.jpg" alt="A day’s forecast for your boat: good conditions, best hours and wind hour by hour in colours"></div><figcaption><b>Your boat’s forecast</b>Each day rated against your own limits, with the best hours to go.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-13.jpg" alt="Aiming the phone at the anchor over the bow to lock its direction, with wind and storm alerts on"></div><figcaption><b>Aim at the anchor</b>Point the phone where the anchor went down for accuracy: the alarm knows where it is, not just where you were.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-08.jpg" alt="Season summary: trips, days on the water, distance, engine hours and crew"></div><figcaption><b>Season summary</b>Trips, days on the water, your longest trip and who came aboard.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-09.jpg" alt="Reports: total cost, fuel, maintenance, cost per hour and by year"></div><figcaption><b>Reports</b>What the boat costs, by year and by category.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-10.jpg" alt="Fuel log: each fill-up with the place, litres and price"></div><figcaption><b>Fuel log</b>Every fill-up with the place, volume and price per litre.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-11.jpg" alt="A boat's page with its photo and every section: vessel, trips, fuel, maintenance, papers"></div><figcaption><b>Your boat</b>Everything about it from one page, for every boat you own.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-14.jpg" alt="Fuel range rings around a planned route on Lake Champlain, with the fuel left on arrival"></div><figcaption><b>Fuel range</b>How far you can go on what’s aboard, with a reserve, and what’s left on arrival.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-15.jpg" alt="The boat history report PDF: vessel details, engines and the full maintenance history with costs"></div><figcaption><b>Boat history report</b>A full PDF of the boat’s life for a buyer, an insurer or a surveyor.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-16.jpg" alt="An expense filled in from a scanned marina receipt: amount, date, vendor and category"></div><figcaption><b>Scan a receipt</b>Amount, date and vendor read on your iPhone; nothing is sent anywhere.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-07.jpg" alt="Planning a route on the marine chart with numbered waypoints"></div><figcaption><b>Plan a route</b>Waypoints on the marine chart, distance, time and fuel.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-12.jpg" alt="A day’s forecast for your boat: good conditions, best hours and wind hour by hour in colours"></div><figcaption><b>Your boat’s forecast</b>Each day rated against your own limits, with the best hours to go.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-13.jpg" alt="Aiming the phone at the anchor over the bow to lock its direction, with wind and storm alerts on"></div><figcaption><b>Aim at the anchor</b>Point the phone where the anchor went down for accuracy: the alarm knows where it is, not just where you were.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-08.jpg" alt="Season summary: trips, days on the water, distance, engine hours and crew"></div><figcaption><b>Season summary</b>Trips, days on the water, your longest trip and who came aboard.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-09.jpg" alt="Reports: total cost, fuel, maintenance, cost per hour and by year"></div><figcaption><b>Reports</b>What the boat costs, by year and by category.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-10.jpg" alt="Fuel log: each fill-up with the place, litres and price"></div><figcaption><b>Fuel log</b>Every fill-up with the place, volume and price per litre.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-11.jpg" alt="A boat's page with its photo and every section: vessel, trips, fuel, maintenance, papers"></div><figcaption><b>Your boat</b>Everything about it from one page, for every boat you own.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-14.jpg" alt="Fuel range rings around a planned route on Lake Champlain, with the fuel left on arrival"></div><figcaption><b>Fuel range</b>How far you can go on what’s aboard, with a reserve, and what’s left on arrival.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-15.jpg" alt="The boat history report PDF: vessel details, engines and the full maintenance history with costs"></div><figcaption><b>Boat history report</b>A full PDF of the boat’s life for a buyer, an insurer or a surveyor.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-16.jpg" alt="An expense filled in from a scanned marina receipt: amount, date, vendor and category"></div><figcaption><b>Scan a receipt</b>Amount, date and vendor read on your iPhone; nothing is sent anywhere.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -401,7 +409,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
       <p class="eyebrow" style="color:var(--sea)">Privacy</p>
       <h3>Your boat’s history belongs to you</h3>
       <p style="color:var(--ink-2)">Your logbook lives on your devices and in your own iCloud. No ads, no tracking, no account to create. Back everything up to a single file whenever you like.</p>
-      <p><a href="privacy.html" style="color:var(--sea);font-weight:700">Read the privacy policy</a></p>
+      <p><a href="/privacy.html#en" style="color:var(--sea);font-weight:700">Read the privacy policy</a></p>
     </div>
   </div>
 </section>
@@ -420,8 +428,8 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
 
 <footer>
   <div class="wrap">
-    <span class="foot-brand"><img src="images/icon-96.png" width="28" height="28" alt="" style="border-radius:7px;vertical-align:middle;margin-right:8px">© 2026 Boating Dockbook</span>
-    <span><a href="#faq">FAQ</a><a href="mailto:boatingdockbook@icloud.com">Contact: boatingdockbook@icloud.com</a><a href="privacy.html">Privacy</a></span>
+    <span class="foot-brand"><img src="/images/icon-96.png" width="28" height="28" alt="" style="border-radius:7px;vertical-align:middle;margin-right:8px">© 2026 Boating Dockbook</span>
+    <span><a href="#faq">FAQ</a><a href="mailto:boatingdockbook@icloud.com">Contact: boatingdockbook@icloud.com</a><a href="/privacy.html#en">Privacy</a></span>
   </div>
 </footer>
 </body>

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boating Dockbook – le journal de bord des bateaux à moteur et voiliers</title>
+<meta name="description" content="Des sorties qui s’enregistrent toutes seules, une alarme de mouillage fiable, la météo aux couleurs de votre bateau, et chaque entretien, plein et document de sécurité au même endroit. Sur iPhone et iPad.">
+<meta property="og:title" content="Boating Dockbook">
+<meta property="og:description" content="Tout sur votre bateau, dans une seule app. Sur iPhone et iPad.">
+<meta property="og:image" content="https://boatingdockbook.github.io/images/shot-01.jpg">
+<link rel="alternate" hreflang="en" href="https://boatingdockbook.github.io/">
+<link rel="alternate" hreflang="fr" href="https://boatingdockbook.github.io/fr/">
+<link rel="alternate" hreflang="it" href="https://boatingdockbook.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://boatingdockbook.github.io/es/">
+<link rel="alternate" hreflang="x-default" href="https://boatingdockbook.github.io/">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+<link rel="apple-touch-icon" href="/images/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a nautical chart under everything — the hero is a chart plate, features alternate like log pages, numbers set in chart-data mono */
+:root{
+  --ink:#0C1F36; --ink-2:#3B4E63; --paper:#F1F4F2; --paper-2:#FFFFFF; --line:#D5DEDB;
+  --sea:#2E6F7E; --sea-soft:#DCEAEC; --brass:#A9812F; --brass-soft:#F2E8D2; --port:#A3402F;
+  --night:#0B1F3A; --night-2:#13304F; --on-night:#EAF1F6; --on-night-2:#A9BED2;
+  --go:#3E8E5A; --warn:#D6A21E; --stop:#C45A2A;
+  --display:"Libre Caslon Display","Didot","Bodoni 72",Georgia,serif;
+  --body:"Figtree",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --ink:#E7EEF3; --ink-2:#A7B8C8; --paper:#0A1A2E; --paper-2:#102540; --line:#22405F;
+  --sea:#6FB3C0; --sea-soft:#163A4A; --brass:#D4AE5C; --brass-soft:#2E2818; --port:#E07A62;
+  --night:#06121F; --night-2:#0E2236; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ink:#E7EEF3; --ink-2:#A7B8C8; --paper:#0A1A2E; --paper-2:#102540; --line:#22405F;
+  --sea:#6FB3C0; --sea-soft:#163A4A; --brass:#D4AE5C; --brass-soft:#2E2818; --port:#E07A62;
+  --night:#06121F; --night-2:#0E2236; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(32px,4.4vw,48px);line-height:1.08}
+h3{font-size:26px;line-height:1.15}
+p{margin:0}
+a{color:inherit}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.lede{font-size:19px;color:var(--ink-2);max-width:60ch}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:12px 18px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.btn-store{background:#000;color:#fff;border:1px solid #3a3a3a}
+.btn-store small{display:block;font-size:11px;font-weight:500;opacity:.8;line-height:1}
+.btn-store b{display:block;font-size:19px;line-height:1.1;font-weight:600}
+.btn-brass{background:var(--brass);color:#1A1405}
+.btn-ghost{background:transparent;color:var(--on-night);border:1px solid #3B5878}
+
+/* header */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--night);border-bottom:1px solid #1D3A5C}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--night);z-index:21}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--on-night);text-decoration:none;font-family:var(--display);font-size:22px}
+.brand svg{flex:none}
+.hero-logo{display:flex;align-items:center;gap:16px;margin-bottom:34px}
+.hero-logo img{flex:none;width:clamp(68px,9vw,112px);height:auto;border-radius:22%;box-shadow:0 0 0 1px rgba(255,255,255,.14),0 10px 30px rgba(0,0,0,.35)}
+.hero-logo .brand-small{font-size:clamp(11px,1.4vw,16px);margin-bottom:5px}
+.hero-logo .brand-big{font-size:clamp(34px,5.4vw,60px)}
+.top .wrap{justify-content:flex-end}
+.brand-icon{flex:none;border-radius:9px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-small{font-family:var(--display);font-size:10.5px;letter-spacing:.32em;color:#D4AE5C;margin-bottom:3px}
+.brand-big{font-family:"Libre Caslon Text",Georgia,serif;font-weight:700;font-size:23px;color:#fff;letter-spacing:.005em}
+.nav{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--on-night-2)}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--on-night)}
+.lang a{color:inherit;text-decoration:none;padding:2px 2px}
+.lang a[aria-current]{color:#E6C483;font-weight:600}
+.lang a:hover{color:#fff}
+.lang{font-family:var(--mono);font-size:12px;letter-spacing:.08em;border:1px solid #2C4A6C;border-radius:8px;padding:5px 8px;color:var(--on-night-2)}
+@media (max-width:820px){.nav .hide-sm{display:none}}
+
+/* hero */
+.hero{padding-top:0;background:var(--night);color:var(--on-night);position:relative;overflow:hidden}
+.hero .chart{position:absolute;inset:0;opacity:.55;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center;padding-block:48px 0}
+.hero h1{font-size:clamp(44px,7vw,84px);line-height:.98;color:#fff}
+.hero h1 em{font-style:italic;color:var(--brass)}
+.hero .lede{color:var(--on-night-2);margin-top:22px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .fix{margin-top:28px;font-family:var(--mono);font-size:12px;color:#7F98B2;letter-spacing:.06em}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:24px 0;gap:36px}}
+
+/* phone */
+.phone{width:min(330px,100%);margin:0 auto;background:#1A2738;border-radius:46px 46px 0 0;padding:12px 12px 0;border:1px solid #2B3D55;border-bottom:0}
+.screen{background:#EEF2EF;border-radius:36px 36px 0 0;overflow:hidden;color:#0C1F36;padding:16px 14px 18px}
+.screen .bar{display:flex;justify-content:space-between;font-size:12px;font-weight:600;padding:2px 10px 10px}
+.screen .title{font-family:var(--display);font-size:24px;margin:2px 4px 10px}
+.card{background:#fff;border-radius:20px;padding:12px;box-shadow:0 1px 0 #D5DEDB}
+.map{border-radius:14px;height:150px;background:#DDEBD2;position:relative;overflow:hidden}
+.trip-h{font-family:var(--display);font-size:21px;margin:10px 2px 8px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;background:#F1F4F2;border-radius:12px;padding:8px 4px;text-align:center}
+.stats b{display:block;font-size:15px;font-variant-numeric:tabular-nums}
+.stats span{font-size:10px;color:#5A6B7C}
+.wx{font-size:12px;color:#3B4E63;margin:10px 2px 0;line-height:1.45}
+
+/* bands */
+section{padding-block:96px}
+.band-head{display:grid;gap:16px;max-width:760px;margin-bottom:56px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.tag{font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--paper-2);border-radius:999px;padding:6px 14px;color:var(--ink-2)}
+
+.waters{background:var(--paper-2);border-block:1px solid var(--line);padding-block:28px}
+.waters .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.waters p{font-size:16px;color:var(--ink-2)}
+.waters ul{display:flex;flex-wrap:wrap;gap:22px;list-style:none;margin:0;padding:0;font-family:var(--mono);font-size:13px;color:var(--sea);letter-spacing:.04em}
+
+/* feature rows */
+.feat{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding-block:56px;border-top:1px solid var(--line)}
+.feat:first-of-type{border-top:0}
+.feat.flip .copy{order:2}
+.feat .copy{display:grid;gap:16px}
+.feat ul{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+.feat li{display:grid;grid-template-columns:22px 1fr;gap:10px;color:var(--ink-2)}
+.feat li::before{content:"";width:9px;height:9px;margin-top:9px;border-radius:2px;background:var(--brass);transform:rotate(45deg)}
+.demo{background:var(--paper-2);border:1px solid var(--line);border-radius:24px;padding:22px;min-height:320px;display:flex;flex-direction:column;justify-content:center;gap:14px}
+@media (max-width:860px){.feat{grid-template-columns:1fr;gap:28px}.feat.flip .copy{order:0}}
+
+/* demo internals */
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.log{width:100%;border-collapse:collapse;font-size:13px}
+.log th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:0 6px 8px;border-bottom:1px solid var(--line)}
+.log td{padding:9px 6px;border-bottom:1px solid var(--line);font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--ink)}
+.logwrap{overflow-x:auto}
+.pill{display:inline-block;font-family:var(--body);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px}
+.p-go{background:#DDEFE2;color:#22633A}.p-warn{background:#F6EBC8;color:#7A5A06}.p-stop{background:#F5DCCF;color:#8A3413}
+.alarm{display:flex;align-items:center;gap:12px;background:var(--port);color:#fff;border-radius:14px;padding:12px 14px;font-weight:700}
+.limits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.limits div{border-radius:10px;padding:10px 8px;font-size:12px;font-weight:700;text-align:center}
+.cost{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cost div{background:var(--paper);border-radius:14px;padding:14px}
+.cost b{display:block;font-family:var(--display);font-size:34px;font-weight:400;line-height:1.1}
+.cost span{font-size:13px;color:var(--ink-2)}
+.check{display:grid;gap:8px}
+.check div{display:flex;justify-content:space-between;gap:12px;align-items:center;background:var(--paper);border-radius:12px;padding:10px 14px;font-size:15px}
+
+/* all features grid */
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.grid > div{background:var(--paper-2);padding:24px;display:grid;gap:8px;align-content:start}
+.grid h4{margin:0;font-size:17px;font-weight:700}
+.grid p{font-size:15px;color:var(--ink-2)}
+.ic{width:34px;height:34px;border-radius:10px;background:var(--sea-soft);color:var(--sea);display:grid;place-items:center}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.grid{grid-template-columns:1fr}}
+
+/* compare */
+.compare{overflow-x:auto;border:1px solid var(--line);border-radius:22px;background:var(--paper-2)}
+.compare table{width:100%;min-width:640px;border-collapse:collapse;font-size:15px}
+.compare th,.compare td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+.compare thead th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.compare thead th.us{color:var(--brass)}
+.compare td.us{background:var(--brass-soft);font-weight:600}
+.compare tr:last-child td{border-bottom:0}
+.y{color:var(--go);font-weight:700}.n{color:var(--ink-2)}
+
+/* privacy + beta */
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.panel{border-radius:26px;padding:36px;display:grid;gap:14px;align-content:start}
+.panel.privacy{background:var(--sea-soft)}
+.panel.beta{background:var(--night);color:var(--on-night)}
+.panel.beta p{color:var(--on-night-2)}
+.panel.beta h3{color:#fff}
+@media (max-width:860px){.duo{grid-template-columns:1fr}.panel{padding:26px}}
+
+/* faq */
+details{border-top:1px solid var(--line);padding-block:18px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--brass);font-size:22px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{margin-top:10px;color:var(--ink-2);max-width:70ch}
+
+footer{background:var(--night);color:var(--on-night-2);padding-block:40px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
+.note{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink-2);margin-top:10px}
+
+/* real screenshots in a phone frame */
+.shot{width:min(300px,100%);margin:0 auto;background:#16222F;border-radius:44px;padding:9px;border:1px solid #2B3D55}
+.shot img{display:block;width:100%;height:auto;border-radius:36px}
+.demo.has-shot{background:transparent;border:0;padding:0;min-height:0}
+.hero .shot{border-radius:46px 46px 0 0;border-bottom:0;padding-bottom:0;width:min(330px,100%)}
+.hero .shot img{border-radius:38px 38px 0 0;aspect-ratio:1320/2140;object-fit:cover;object-position:top}
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:22px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.gallery figure{margin:0;scroll-snap-align:start;display:grid;gap:12px}
+.gallery .shot{width:100%;border-radius:36px;padding:7px}
+.gallery .shot img{border-radius:30px}
+.gallery figcaption{font-size:15px;color:var(--ink-2)}
+.gallery figcaption b{display:block;color:var(--ink);font-size:16px}
+@media (prefers-reduced-motion:no-preference){
+  .wake{animation:wake 1.4s ease-out both}
+  @keyframes wake{from{transform:translateY(18px)}to{transform:none}}
+  .swing{animation:swing 6s ease-in-out infinite alternate;transform-origin:120px 110px}
+  @keyframes swing{from{transform:rotate(-24deg)}to{transform:rotate(28deg)}}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="Principal">
+      <a class="hide-sm" href="#features">Fonctions</a>
+      <a class="hide-sm" href="#compare">Pourquoi Dockbook</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <nav class="lang" aria-label="Language"><a href="/" lang="en">EN</a> · <a href="/fr/" lang="fr" aria-current="page">FR</a> · <a href="/it/" lang="it">IT</a> · <a href="/es/" lang="es">ES</a></nav>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="h1">
+  <svg class="chart" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="#2A4C72" stroke-width="1.2">
+      <path d="M-20 520 C 180 470 300 560 470 510 S 760 400 920 460 S 1150 520 1240 470"/>
+      <path d="M-20 580 C 200 530 320 620 500 570 S 780 470 950 520 S 1160 590 1240 540" stroke-dasharray="6 6"/>
+      <path d="M-20 640 C 220 600 360 670 540 630 S 820 540 980 590 S 1170 650 1240 610"/>
+      <path d="M-20 120 C 160 160 260 90 420 140 S 700 230 860 170 S 1100 110 1240 160" stroke-dasharray="2 7"/>
+      <path d="M-20 60 C 180 100 300 30 460 80 S 740 160 900 110 S 1120 60 1240 100"/>
+    </g>
+    <g font-family="IBM Plex Mono, monospace" font-size="13" fill="#3D6489">
+      <text x="120" y="560">12</text><text x="300" y="600">18</text><text x="520" y="540">24</text><text x="690" y="610">31</text>
+      <text x="880" y="500">27</text><text x="1040" y="570">36</text><text x="210" y="140">6</text><text x="640" y="200">9</text><text x="980" y="140">8</text>
+    </g>
+    <g transform="translate(1030 300)" stroke="#2E5579" fill="none">
+      <circle r="92"/><circle r="70" stroke-dasharray="2 4"/>
+      <path d="M0 -104 L8 -10 L0 0 L-8 -10 Z M0 104 L8 10 L0 0 L-8 10 Z M-104 0 L-10 -8 L0 0 L-10 8 Z M104 0 L10 -8 L0 0 L10 8 Z" fill="#183A5E"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="hero-logo">
+        <img src="/images/icon-180.png" width="104" height="104" alt="">
+        <span class="brand-name"><span class="brand-small">BOATING</span><span class="brand-big">Dockbook</span></span>
+      </div>
+      <p class="eyebrow">Le journal de bord des bateaux à moteur et voiliers</p>
+      <h1 style="margin-top:14px">Tout sur votre bateau, <em>dans une seule app</em></h1>
+      <p class="lede">Des sorties qui s’enregistrent toutes seules, une alarme de mouillage fiable, la météo aux couleurs de votre bateau, et chaque entretien, plein et document de sécurité au même endroit. Sur iPhone et iPad.</p>
+      <div class="ctas">
+        <a class="btn btn-store" href="#" aria-label="Télécharger dans l’App Store">
+          <svg width="22" height="26" viewBox="0 0 24 28" aria-hidden="true"><path fill="#fff" d="M19.6 14.9c0-3.2 2.6-4.7 2.7-4.8-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.1-4.8 1.1s-2.5-1.1-4.2-1.1C6.6 7.6 4.6 8.9 3.4 11c-2.3 4-.6 9.9 1.7 13.1 1.1 1.6 2.4 3.4 4.1 3.3 1.6-.1 2.3-1.1 4.3-1.1s2.5 1.1 4.2 1 2.8-1.6 3.8-3.2c1.2-1.8 1.7-3.6 1.7-3.7 0 0-3.6-1.4-3.6-5.5zM16.4 5.4c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.7 1.9-.8.9-1.5 2.5-1.3 3.9 1.4.1 2.8-.7 3.7-1.7z"/></svg>
+          <span><small>Télécharger dans</small><b>l’App Store</b></span>
+        </a>
+      </div>
+      <p class="fix">45°31′N 73°34′O · PROFONDEURS EN PIEDS · PAS POUR LA NAVIGATION</p>
+    </div>
+    <div class="shot wake"><img src="/images/shot-01.jpg" alt="L’écran Sorties de Dockbook : la distance de la saison, la dernière sortie avec sa carte, sa météo et son équipage" width="620" height="1006"></div>
+  </div>
+</section>
+
+<section id="features" aria-labelledby="feat-h">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="eyebrow">Ce qu’elle fait</p>
+      <h2 id="feat-h">Une saison sur l’eau, consignée toute seule</h2>
+      <p class="lede">Dockbook travaille pendant que vous naviguez. Elle voit quand vous quittez le quai, veille au mouillage et fait de chaque sortie une page de l’histoire de votre bateau.</p>
+    </div>
+
+    <article class="feat">
+      <div class="copy">
+        <p class="eyebrow">Sorties automatiques</p>
+        <h3>Quittez le quai. Le journal se remplit tout seul.</h3>
+        <p>Dockbook vous voit quitter votre port ou votre mouillage et enregistre la sortie en arrière-plan, puis la nomme d’après vos lieux ou la marina, la baie ou la ville la plus proche.</p>
+        <ul>
+          <li>Trajet, durée, distance, vitesses et carburant à chaque sortie</li>
+          <li>Météo et niveau d’eau notés en chemin, heure par heure</li>
+          <li>Une page de journal à partager en PDF, et une reprise sur la carte</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-02.jpg" alt="Enregistrement d’une sortie : la trace sur la carte, la vitesse, le cap, la distance et le temps de route"></div></div>
+    </article>
+
+    <article class="feat flip">
+      <div class="copy">
+        <p class="eyebrow">Surveillance du mouillage</p>
+        <h3>Dormez au mouillage. Dockbook fait le quart.</h3>
+        <p>Placez l’ancre là où vous l’avez mouillée, ou devant l’étrave avec le compas, et choisissez le cercle d’évitement. L’alarme sonne si le bateau chasse, même écran verrouillé.</p>
+        <ul>
+          <li>GPS lissé, pour qu’une position qui saute ne vous réveille pas pour rien</li>
+          <li>Alertes de saute de vent et d’orage là où vous êtes mouillé</li>
+          <li>Plan, carte marine ou satellite sous le cercle</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-03.jpg" alt="La surveillance du mouillage : le cercle d’évitement sur la carte, la distance de l’ancre et le rayon d’alarme"></div></div>
+    </article>
+
+    <article class="feat">
+      <div class="copy">
+        <p class="eyebrow">Météo et vent</p>
+        <h3>La météo aux couleurs de votre bateau</h3>
+        <p>Indiquez le vent, les rafales et les vagues (si disponibles) qui conviennent à votre bateau et à votre équipage. Chaque heure des dix prochains jours devient verte, jaune, orange ou rouge selon ces limites.</p>
+        <ul>
+          <li>Radar, prévision de pluie, vent et vagues sur une seule carte avec un seul curseur de temps</li>
+          <li>Ce que mesurent en ce moment les bouées et stations les plus proches</li>
+          <li>Le meilleur moment pour partir sur un trajet planifié</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-04.jpg" alt="La carte météo sur le lac Champlain : flèches de vent, hauteurs de vagues et une bouée marquée agitée pour ce bateau, avec un seul curseur de temps"></div></div>
+    </article>
+
+    <article class="feat flip">
+      <div class="copy">
+        <p class="eyebrow">Carburant, entretien et coût réel</p>
+        <h3>Sachez ce que votre bateau coûte vraiment, à l’heure</h3>
+        <p>Notez pleins et entretiens en quelques secondes, numérisez le reçu, et laissez Dockbook vous rappeler la prochaine vidange ou turbine selon les heures moteur ou la date.</p>
+        <ul>
+          <li>Intervalles d’entretien par moteur, avec numéros de série et pièces</li>
+          <li>Une liste de tâches liée à ce qu’il faut acheter pour chaque travail</li>
+          <li>Le coût réel par heure et par saison, assurance et place à quai comprises</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-05.jpg" alt="Intervalles d’entretien selon les heures moteur et la date, avec ce qui arrive bientôt"></div></div>
+    </article>
+
+    <article class="feat">
+      <div class="copy">
+        <p class="eyebrow">Sécurité et documents</p>
+        <h3>Prêt pour l’inspection à quai</h3>
+        <p>Dockbook connaît l’équipement obligatoire selon la taille de votre bateau et vos eaux, d’après les règles de Transports Canada et de la Garde côtière américaine, et vous dit ce qui manque ou va expirer.</p>
+        <ul>
+          <li>Fusées, extincteurs, gilets et feux, comptés et datés</li>
+          <li>Permis, immatriculation et assurance, avec rappels de renouvellement</li>
+          <li>Une liste de sécurité à imprimer ou à montrer sur le téléphone</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="/images/shot-06.jpg" alt="Documents et sécurité : assurance, permis et carte de conducteur avec leurs dates, et l’équipement de sécurité à bord"></div></div>
+    </article>
+  </div>
+</section>
+
+
+<section style="padding-top:0" aria-labelledby="gal-h">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="eyebrow">Un aperçu</p>
+      <h2 id="gal-h">Toute votre saison, à portée de doigt</h2>
+    </div>
+    <div class="gallery" tabindex="0" aria-label="Captures d’écran, faites défiler sur le côté">
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-07.jpg" alt="Planifier un trajet sur la carte marine avec des points numérotés"></div><figcaption><b>Planifier un trajet</b>Points sur la carte marine, distance, durée et carburant.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-12.jpg" alt="La prévision d’une journée pour votre bateau : bonnes conditions, meilleures heures et vent heure par heure en couleurs"></div><figcaption><b>La prévision pour votre bateau</b>Chaque jour évalué selon vos propres limites, avec les meilleures heures pour partir.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-13.jpg" alt="Viser l’ancre avec le téléphone par-dessus l’étrave pour fixer sa direction, avec les alertes de vent et d’orage activées"></div><figcaption><b>Viser l’ancre</b>Pointez le téléphone là où l’ancre est descendue, pour la précision : l’alarme sait où elle est, pas seulement où vous étiez.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-08.jpg" alt="Bilan de saison : sorties, jours sur l’eau, distance, heures moteur et équipage"></div><figcaption><b>Bilan de saison</b>Sorties, jours sur l’eau, votre plus longue sortie et qui est monté à bord.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-09.jpg" alt="Rapports : coût total, carburant, entretien, coût à l’heure et par année"></div><figcaption><b>Rapports</b>Ce que coûte le bateau, par année et par catégorie.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-10.jpg" alt="Journal de carburant : chaque plein avec le lieu, les litres et le prix"></div><figcaption><b>Carburant</b>Chaque plein avec le lieu, le volume et le prix au litre.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-11.jpg" alt="La page d’un bateau avec sa photo et chaque section : bateau, sorties, carburant, entretien, documents"></div><figcaption><b>Votre bateau</b>Tout sur lui depuis une seule page, pour chacun de vos bateaux.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-14.jpg" alt="Les cercles d’autonomie autour d’un trajet planifié sur le lac Champlain, avec le carburant restant à l’arrivée"></div><figcaption><b>Autonomie</b>Jusqu’où aller avec ce qui est à bord, en gardant une réserve, et ce qui reste à l’arrivée.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-15.jpg" alt="Le PDF de l’historique du bateau : fiche du bateau, moteurs et tout l’historique d’entretien avec les coûts"></div><figcaption><b>Historique du bateau</b>Un PDF complet de la vie du bateau pour un acheteur, un assureur ou un expert.</figcaption></figure>
+      <figure><div class="shot"><img loading="lazy" src="/images/shot-16.jpg" alt="Une dépense remplie à partir d’un reçu de marina numérisé : montant, date, fournisseur et catégorie"></div><figcaption><b>Numériser un reçu</b>Montant, date et fournisseur lus sur votre iPhone ; rien n’est envoyé nulle part.</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section style="padding-top:0" aria-labelledby="all-h">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="eyebrow">Et bien plus</p>
+      <h2 id="all-h">Le reste du coffre à outils</h2>
+    </div>
+    <div class="grid">
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg></span><h4>Planificateur de trajet</h4><p>Cartes marines, points, sorties de plusieurs jours avec escales de nuit et cercles d’autonomie.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4>Vos lieux</h4><p>Mouillages, marinas et postes d’essence avec profondeur, fond, photos et notes.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18a5 5 0 1 1 .8-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg></span><h4>iCloud sur iPhone et iPad</h4><p>Vos bateaux, sorties et réglages sur tous vos appareils avec le même compte Apple.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h4>Livre de saison</h4><p>Toute votre saison en PDF : sorties, photos, coûts et journal de bord.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h4>Écran verrouillé et widgets</h4><p>L’enregistrement de sortie et la surveillance du mouillage en direct sur l’écran verrouillé et la Dynamic Island.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span><h4>Importer et exporter</h4><p>Traces et trajets GPX, tableurs (CSV) et sauvegardes complètes protégées par mot de passe.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h4>Face ID</h4><p>Gardez votre journal, vos documents et vos coûts privés sur un iPad partagé.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></span><h4>Siri et Raccourcis</h4><p>« Démarrer une sortie » ou « Surveiller l’ancre » sans ouvrir l’app.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><h4>Quatre langues</h4><p>Anglais, français, italien et espagnol, avec les unités de votre choix.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="compare" style="background:var(--paper-2);border-block:1px solid var(--line)" aria-labelledby="cmp-h">
+  <div class="wrap">
+    <div class="band-head">
+      <p class="eyebrow">Pourquoi Dockbook</p>
+      <h2 id="cmp-h">Une app au lieu de plusieurs</h2>
+      <p class="lede">La plupart des plaisanciers tiennent un journal papier pour les sorties, une app de notes pour l’entretien, une app météo et une alarme de mouillage. Dockbook les réunit et les relie : vos sorties remplissent les heures moteur, les heures déclenchent les entretiens, les entretiens remplissent la liste d’achats.</p>
+    </div>
+    <div class="compare">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="us">Dockbook</th><th scope="col">Journal papier</th><th scope="col">Apps séparées</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Sorties enregistrées toutes seules</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Certaines</td></tr>
+          <tr><th scope="row">Météo selon vos propres limites</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Rarement</td></tr>
+          <tr><th scope="row">Alarme de mouillage avec GPS lissé</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Une app de plus</td></tr>
+          <tr><th scope="row">Entretiens dus selon les heures moteur</th><td class="us"><span class="y">✓</span></td><td class="n">À la main</td><td class="n">Rarement</td></tr>
+          <tr><th scope="row">Équipement de sécurité vérifié selon les règles</th><td class="us"><span class="y">✓</span></td><td class="n">À la main</td><td class="n">—</td></tr>
+          <tr><th scope="row">Coût réel par heure et par saison</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Un tableur</td></tr>
+          <tr><th scope="row">Tout au même endroit, sur iPhone et iPad</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="privacy" aria-label="Confidentialité">
+  <div class="wrap">
+    <div class="panel privacy">
+      <p class="eyebrow" style="color:var(--sea)">Confidentialité</p>
+      <h3>L’histoire de votre bateau vous appartient</h3>
+      <p style="color:var(--ink-2)">Votre journal vit sur vos appareils et dans votre propre iCloud. Pas de pub, pas de pistage, pas de compte à créer. Sauvegardez tout dans un seul fichier quand vous voulez.</p>
+      <p><a href="/privacy.html#fr" style="color:var(--sea);font-weight:700">Lire la politique de confidentialité</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0" aria-labelledby="faq-h">
+  <div class="wrap" style="max-width:860px">
+    <div class="band-head"><p class="eyebrow">Questions</p><h2 id="faq-h">Avant de larguer les amarres</h2></div>
+    <details><summary>Fonctionne-t-elle sans réseau cellulaire ?</summary><p>Oui. Les sorties, la surveillance du mouillage et votre journal fonctionnent hors ligne. La météo et les cartes se chargent quand vous avez une connexion, et les sorties reçoivent leur météo dès que vous êtes de retour à portée.</p></details>
+    <details><summary>Pour quels bateaux ?</summary><p>Bateaux à moteur, voiliers et motomarines, avec un ou plusieurs moteurs : hors-bord, semi-hors-bord, inboard ou saildrive. Vous pouvez gérer plusieurs bateaux.</p></details>
+    <details><summary>Puis-je l’utiliser sur un iPad Wi‑Fi ?</summary><p>Oui, pour tout ce qui se fait à quai. Un iPad Wi‑Fi n’a pas de GPS : laissez votre iPhone enregistrer les sorties et surveiller l’ancre, elles apparaissent sur l’iPad par iCloud.</p></details>
+    <details><summary>Puis-je importer mon journal actuel ?</summary><p>Importez vos sorties depuis des fichiers GPX et vos données depuis un tableur (CSV). Dockbook les associe à votre bateau.</p></details>
+    <details><summary>Est-ce une app de navigation ?</summary><p>Non. Les cartes et la météo servent à planifier. Gardez toujours à bord les cartes officielles et l’équipement de sécurité obligatoire.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img src="/images/icon-96.png" width="28" height="28" alt="" style="border-radius:7px;vertical-align:middle;margin-right:8px">© 2026 Boating Dockbook</span>
+    <span><a href="#faq">FAQ</a><a href="mailto:boatingdockbook@icloud.com">Contact : boatingdockbook@icloud.com</a><a href="/privacy.html#fr">Confidentialité</a></span>
+  </div>
+</footer>
+</body>
+</html>
