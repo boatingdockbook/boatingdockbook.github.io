@@ -8,9 +8,11 @@
 <meta property="og:title" content="Boating Dockbook">
 <meta property="og:description" content="Everything about your boat, in one app. On iPhone and iPad.">
 <meta property="og:image" content="https://boatingdockbook.github.io/images/shot-01.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@700&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: a nautical chart under everything — the hero is a chart plate, features alternate like log pages, numbers set in chart-data mono */
 :root{
@@ -54,6 +56,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--on-night);text-decoration:none;font-family:var(--display);font-size:22px}
 .brand svg{flex:none}
+.brand-icon{flex:none;border-radius:9px;box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+.brand-name{display:flex;flex-direction:column;line-height:1}
+.brand-small{font-family:var(--display);font-size:10.5px;letter-spacing:.32em;color:#D4AE5C;margin-bottom:3px}
+.brand-big{font-family:"Libre Caslon Text",Georgia,serif;font-weight:700;font-size:23px;color:#fff;letter-spacing:.005em}
 .nav{display:flex;gap:22px;align-items:center;font-size:15px;color:var(--on-night-2)}
 .nav a{text-decoration:none}
 .nav a:hover{color:var(--on-night)}
@@ -191,8 +197,8 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Boating Dockbook, home">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="14" fill="none" stroke="#D4AE5C" stroke-width="1.5"/><path d="M15 6v18M10 10h10M8 17c1.5 4 4 6 7 6s5.5-2 7-6" fill="none" stroke="#EAF1F6" stroke-width="2" stroke-linecap="round"/><circle cx="15" cy="6" r="2" fill="#D4AE5C"/></svg>
-      Boating Dockbook
+      <img class="brand-icon" src="images/icon-96.png" width="40" height="40" alt="">
+      <span class="brand-name"><span class="brand-small">BOATING</span><span class="brand-big">Dockbook</span></span>
     </a>
     <nav class="nav" aria-label="Main">
       <a class="hide-sm" href="#features">Features</a>
@@ -409,7 +415,7 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Boating Dockbook</span>
+    <span class="foot-brand"><img src="images/icon-96.png" width="28" height="28" alt="" style="border-radius:7px;vertical-align:middle;margin-right:8px">© 2026 Boating Dockbook</span>
     <span><a href="#faq">FAQ</a><a href="mailto:boatingdockbook@icloud.com">Contact: boatingdockbook@icloud.com</a><a href="privacy.html">Privacy</a></span>
   </div>
 </footer>
