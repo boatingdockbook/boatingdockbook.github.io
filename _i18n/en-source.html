@@ -197,9 +197,18 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
 }
 </style>
 <script>
-// A refresh starts at the top of the page (a link to a section, like #faq, still goes there).
-try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
-window.addEventListener("load", function () { if (!location.hash) window.scrollTo(0, 0); });
+// Every load or refresh starts at the top of the page, even after a menu link (#faq…) was tapped
+// (Safari also restores the old position from its page cache: "pageshow" covers that).
+(function () {
+  try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+  function top() { window.scrollTo(0, 0); }
+  function later() { top(); setTimeout(top, 0); setTimeout(top, 150); }
+  window.addEventListener("beforeunload", top);
+  window.addEventListener("pagehide", top);
+  document.addEventListener("DOMContentLoaded", later);
+  window.addEventListener("load", later);
+  window.addEventListener("pageshow", later);
+})();
 </script>
 </head>
 <body>
