@@ -7,7 +7,7 @@ def build(lang):
     s=src
     i=L.index(lang)-1
     s=s.replace('src="images/','src="/images/').replace('href="images/','href="/images/')
-    s=s.replace('<html lang="en">',f'<html lang="{lang}">',1)
+    s=s.replace('<html lang="en">',f'<html lang="{"fr-CA" if lang=="fr" else lang}">',1)
     alt=''.join(f'<link rel="alternate" hreflang="{l}" href="https://boatingdockbook.github.io/{"" if l=="en" else l+"/"}">\n' for l in L)+'<link rel="alternate" hreflang="x-default" href="https://boatingdockbook.github.io/">\n'
     s=s.replace('<link rel="icon"',alt+'<link rel="icon"',1)
     sw='<nav class="lang" aria-label="Language">'+' · '.join(f'<a href="/{"" if l=="en" else l+"/"}" lang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{l.upper()}</a>' for l in L)+'</nav>'
