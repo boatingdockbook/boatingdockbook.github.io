@@ -27,6 +27,11 @@ section p{margin:0;color:var(--mute)}
 a{color:var(--sea);font-weight:600}
 footer{color:var(--mute);font-size:13px;text-align:center;padding:0 16px 32px}
 </style>
+<script>
+// A refresh starts at the top of the page (a link to a section, like #faq, still goes there).
+try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+window.addEventListener("load", function () { if (!location.hash) window.scrollTo(0, 0); });
+</script>
 </head>
 <body>
 <header><div class="in"><a class="brand" id="home" href="/" style="color:#fff;text-decoration:none"><span aria-hidden="true">⛵</span> Boating Dockbook</a><nav aria-label="Language"><button type="button" data-l="en" aria-pressed="false">English</button><button type="button" data-l="fr" aria-pressed="false">Français</button><button type="button" data-l="it" aria-pressed="false">Italiano</button><button type="button" data-l="es" aria-pressed="false">Español</button></nav></div></header>

@@ -204,6 +204,11 @@ footer a{color:var(--on-night);text-decoration:none;margin-left:18px}
   @keyframes swing{from{transform:rotate(-24deg)}to{transform:rotate(28deg)}}
 }
 </style>
+<script>
+// A refresh starts at the top of the page (a link to a section, like #faq, still goes there).
+try { if ("scrollRestoration" in history) history.scrollRestoration = "manual"; } catch (e) {}
+window.addEventListener("load", function () { if (!location.hash) window.scrollTo(0, 0); });
+</script>
 </head>
 <body>
 
