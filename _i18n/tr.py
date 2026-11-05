@@ -87,7 +87,7 @@ T = {
 'Scan a receipt': ('Numériser un reçu', 'Scansiona uno scontrino', 'Escanea un recibo'),
 'Amount, date and vendor read on your iPhone; nothing is sent anywhere.': ('Le montant, la date et le fournisseur sont lus sur votre iPhone; rien n’est envoyé ailleurs.', 'Importo, data e fornitore letti sul tuo iPhone; nulla viene inviato altrove.', 'Importe, fecha y proveedor leídos en tu iPhone; no se envía nada a ninguna parte.'),
 'And much more': ('Et bien plus encore', 'E molto altro', 'Y mucho más'),
-'The rest of the toolbox': ('Le reste du coffre à outils', 'Il resto della cassetta degli attrezzi', 'El resto de la caja de herramientas'),
+'The rest of the toolbox': ('Encore plus d’outils', 'Il resto della cassetta degli attrezzi', 'El resto de la caja de herramientas'),
 'Route planner': ('Planificateur de trajet', 'Pianificatore di rotta', 'Planificador de rutas'),
 'Marine charts, waypoints, multi-day trips with overnight stops and fuel range rings.': ('Cartes marines, points de route, croisières de plusieurs jours avec escales de nuit et cercles d’autonomie.', 'Carte nautiche, waypoint, uscite di più giorni con soste notturne e cerchi di autonomia.', 'Cartas náuticas, waypoints, salidas de varios días con paradas nocturnas y círculos de autonomía.'),
 'Your places': ('Vos lieux', 'I tuoi luoghi', 'Tus lugares'),
