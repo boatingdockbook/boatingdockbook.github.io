@@ -138,4 +138,5 @@ T = {
 'Is it a navigation app?': ('Est-ce une application de navigation?', 'È un’app di navigazione?', '¿Es una app de navegación?'),
 'No. Dockbook’s charts and weather are for planning. Always carry official charts and all the safety equipment required for your boat and waters.': ('Non. Les cartes et la météo de Dockbook servent à la planification. Ayez toujours à bord les cartes officielles et tout l’équipement de sécurité obligatoire pour votre bateau et vos eaux.', 'No. Carte e meteo di Dockbook servono a pianificare. Tieni sempre a bordo le carte ufficiali e tutte le dotazioni di sicurezza richieste per la tua barca e le tue acque.', 'No. Las cartas y el tiempo de Dockbook sirven para planificar. Lleva siempre a bordo las cartas oficiales y todo el equipo de seguridad exigido para tu barco y tus aguas.'),
 'Contact: contact@boatingdockbook.com': ('Courriel\xa0: contact@boatingdockbook.com', 'Contatti: contact@boatingdockbook.com', 'Contacto: contact@boatingdockbook.com'),
+'More than a logbook.': ('Bien plus qu’un journal de bord.', 'Molto più di un giornale di bordo.', 'Mucho más que un cuaderno de bitácora.'),
 }
