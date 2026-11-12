@@ -14,6 +14,7 @@ def build(lang):
     old='<span class="lang" title="Also in French, Italian and Spanish">EN · FR · IT · ES</span>'
     assert old in s; s=s.replace(old,sw)
     s=s.replace('href="privacy.html"',f'href="/privacy.html#{lang}"')
+    s=s.replace('href="terms.html"',f'href="/terms.html#{lang}"')
     # Each language shows its own screenshots (the weather map and forecast, from a real phone, stay in English).
     if lang!='en':
         s=re.sub(r'src="/images/shot-(\d\d)\.jpg"', lambda m: f'src="/images/{lang}/shot-{m.group(1)}.jpg"' if os.path.exists(os.path.join(os.path.dirname(__file__),'..','images',lang,f'shot-{m.group(1)}.jpg')) else m.group(0), s)

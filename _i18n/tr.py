@@ -122,6 +122,7 @@ T = {
 'A spreadsheet': ('Un chiffrier', 'Un foglio di calcolo', 'Una hoja de cálculo'),
 'Everything in one place, on iPhone and iPad': ('Tout au même endroit, sur iPhone et iPad', 'Tutto in un solo posto, su iPhone e iPad', 'Todo en un solo lugar, en iPhone y iPad'),
 'Privacy': ('Confidentialité', 'Privacy', 'Privacidad'),
+'Terms of Use': ('Conditions d’utilisation', 'Condizioni d’uso', 'Condiciones de uso'),
 'Your boat’s history belongs to you': ('L’histoire de votre bateau vous appartient', 'La storia della tua barca appartiene a te', 'La historia de tu barco te pertenece'),
 'Your logbook stays on your devices and in your own iCloud account. No ads, no tracking, no account to create. Back everything up to a single file whenever you like.': ('Votre journal de bord reste sur vos appareils et dans votre propre iCloud. Aucune publicité, aucun pistage, aucun compte à créer. Sauvegardez tout dans un seul fichier, quand vous le voulez.', 'Il tuo giornale vive sui tuoi dispositivi e nel tuo iCloud. Niente pubblicità, niente tracciamento, nessun account da creare. Fai il backup di tutto in un solo file quando vuoi.', 'Tu bitácora vive en tus dispositivos y en tu propio iCloud. Sin anuncios, sin rastreo, sin cuenta que crear. Haz una copia de todo en un solo archivo cuando quieras.'),
 'Read the privacy policy': ('Lire la politique de confidentialité', 'Leggi l’informativa sulla privacy', 'Leer la política de privacidad'),
