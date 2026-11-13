@@ -54,7 +54,7 @@ T = {
 'Papers and safety: the safety equipment this boat must carry, each item to check, and its papers': ('Papiers et sécurité\xa0: l’équipement de sécurité que ce bateau doit avoir à bord, chaque article à vérifier et ses papiers', 'Documenti e sicurezza: le dotazioni di sicurezza obbligatorie per questa barca, ogni elemento da controllare e i documenti della barca', 'Papeles y seguridad: el equipo de seguridad que esta embarcación debe llevar, cada elemento que revisar y sus papeles'),
 'A look inside': ('Un coup d’œil à l’intérieur', 'Uno sguardo all’interno', 'Un vistazo'),
 'Your whole season, one tap away': ('Toute votre saison, à portée de doigt', 'Tutta la tua stagione, a portata di dito', 'Toda tu temporada, a un toque'),
-'Screenshots (scroll sideways)': ('Captures d’écran, faites défiler horizontalement', 'Schermate (scorri di lato)', 'Capturas de pantalla (desliza hacia el lado)'),
+'Screenshots (scroll sideways)': ('Captures d’écran, faites défiler horizontalement', 'Schermate (scorri di lato)', 'Capturas de pantalla (desliza hacia los lados)'),
 'Planning a route on the marine chart with numbered waypoints': ('Planification d’un trajet sur la carte marine avec des points de passage numérotés', 'Pianificare una rotta sulla carta nautica con waypoint numerati', 'Planificar una ruta en la carta náutica con waypoints numerados'),
 'Plan a route': ('Planifier un trajet', 'Pianifica una rotta', 'Planifica una ruta'),
 'Waypoints on the marine chart, distance, time, and fuel.': ('Points de passage sur la carte marine, distance, durée et carburant.', 'Waypoint sulla carta nautica, distanza, tempo e carburante.', 'Waypoints en la carta náutica, distancia, tiempo y combustible.'),
