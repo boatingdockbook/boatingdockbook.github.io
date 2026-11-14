@@ -87,7 +87,6 @@ T = {
 'From the anchor': ('De l’ancre', 'Dall’ancora', 'Del ancla'),
 'Alarm at': ('Alarme à', 'Allarme a', 'Alarma a'),
 'Wind alert': ('Alerte de vent', 'Avviso vento', 'Alerta de viento'),
-'Anchor secure · 73 ft': ('L’ancre tient · 73\xa0ft', 'Ancora sicura · 22 m', 'Ancla segura · 22 m'),
 'Watching all night, screen locked': ('Surveillance toute la nuit, écran verrouillé', 'Veglia tutta la notte, a schermo bloccato', 'Vigilando toda la noche, con la pantalla bloqueada'),
 '→ SW 15 km/h · you’ll know first': ('→ SW 15\xa0km/h · vous le saurez d’avance', '→ SW 15 km/h · lo sai in anticipo', '→ SW 15 km/h · lo sabrás antes'),
 '🔔 Alarm if the boat drags': ('🔔 Alarme si l’ancre chasse', '🔔 Allarme se l’ancora ara', '🔔 Alarma si el ancla garrea'),
@@ -174,4 +173,5 @@ T = {
 'Is there a free trial?': ('Y a-t-il un essai gratuit?', 'C’è un periodo di prova gratuito?', '¿Hay un periodo de prueba gratis?'),
 'Yes: 30 days, risk-free. Try every feature; if Dockbook isn’t for you, cancel at least 24 hours before the trial ends and you pay nothing.': ('Oui\xa0: 30\xa0jours, sans risque. Découvrez toutes les fonctionnalités; si Dockbook ne vous convient pas, annulez au moins 24\xa0h avant la fin de l’essai et vous ne payez rien.', 'Sì: 30 giorni, senza rischi. Scopri tutte le funzioni; se Dockbook non fa per te, disdici almeno 24 ore prima della fine della prova e non paghi nulla.', 'Sí: 30 días, sin riesgo. Descubre todas las funciones; si Dockbook no es para ti, cancela al menos 24 horas antes de que termine la prueba y no pagas nada.'),
 'Boater and maker of Boating Dockbook': ('Plaisancier et créateur de Boating Dockbook', 'Diportista e creatore di Boating Dockbook', 'Navegante y creador de Boating Dockbook'),
+'Anchor secure · 80 ft': ('L’ancre tient · 80\xa0ft', 'Ancora sicura · 24 m', 'Ancla segura · 24 m'),
 }
