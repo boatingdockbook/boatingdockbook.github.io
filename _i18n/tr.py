@@ -127,7 +127,7 @@ T = {
 'Flares, extinguishers and papers, with renewal reminders': ('Fusées éclairantes, extincteurs et documents, avec rappels de renouvellement', 'Razzi, estintori e documenti, con promemoria per i rinnovi', 'Bengalas, extintores y documentos, con avisos de renovación'),
 'A boat history report for a buyer, an insurer or a surveyor': ('L’historique du bateau, prêt pour un acheteur, un assureur ou un expert maritime', 'Lo storico della barca, pronto per un acquirente, l’assicurazione o il perito', 'El historial del barco para un comprador, una aseguradora o un perito'),
 'Why I built it': ('Pourquoi je l’ai créée', 'Perché l’ho creata', 'Por qué la hice'),
-'Two people watching the sunset over the lake from the shore': ('Depuis la rive, deux personnes regardent le soleil se coucher sur le lac', 'Due persone guardano il tramonto sul lago dalla riva', 'Dos personas miran la puesta de sol sobre el lago desde la orilla'),
+'Sunset over the lake, the clouds lit up and reflected in the water': ('Coucher de soleil sur le lac, les nuages illuminés et reflétés dans l’eau', 'Tramonto sul lago, con le nuvole illuminate e riflesse nell’acqua', 'Puesta de sol sobre el lago, con las nubes iluminadas y reflejadas en el agua'),
 'Anchor alarm with live wind': ('Alarme de mouillage avec le vent en direct', 'Allarme ancora con vento in tempo reale', 'Alarma de fondeo con viento en directo'),
 'Water level against the chart and last year': ('Niveau d’eau comparé à la carte et à l’an dernier', 'Livello dell’acqua rispetto alla carta e all’anno scorso', 'Nivel del agua frente a la carta y al año pasado'),
 'Where is my data?': ('Où sont mes données?', 'Dove sono i miei dati?', '¿Dónde están mis datos?'),
