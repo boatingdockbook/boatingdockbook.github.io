@@ -129,7 +129,6 @@ T = {
 'A boat history report for a buyer, an insurer or a surveyor': ('L’historique du bateau, prêt pour un acheteur, un assureur ou un expert maritime', 'Lo storico della barca, pronto per un acquirente, l’assicurazione o il perito', 'El historial del barco para un comprador, una aseguradora o un perito'),
 'Why I built it': ('Pourquoi je l’ai créée', 'Perché l’ho creata', 'Por qué la hice'),
 'Two people watching the sunset over the lake from the shore': ('Depuis la rive, deux personnes regardent le soleil se coucher sur le lac', 'Due persone guardano il tramonto sul lago dalla riva', 'Dos personas miran la puesta de sol sobre el lago desde la orilla'),
-'Boater and maker of Dockbook': ('Plaisancier et créateur de Dockbook', 'Diportista e creatore di Dockbook', 'Navegante y creador de Dockbook'),
 'Anchor alarm with live wind': ('Alarme de mouillage avec le vent en direct', 'Allarme ancora con vento in tempo reale', 'Alarma de fondeo con viento en directo'),
 'Water level against the chart and last year': ('Niveau d’eau comparé à la carte et à l’an dernier', 'Livello dell’acqua rispetto alla carta e all’anno scorso', 'Nivel del agua frente a la carta y al año pasado'),
 'Where is my data?': ('Où sont mes données?', 'Dove sono i miei dati?', '¿Dónde están mis datos?'),
@@ -174,4 +173,5 @@ T = {
 'Every feature included. Cancel before the trial ends and pay nothing.': ('Toutes les fonctionnalités incluses. Annulez avant la fin de l’essai\xa0: vous ne payez rien.', 'Tutte le funzioni incluse. Disdici prima della fine della prova e non paghi nulla.', 'Todas las funciones incluidas. Cancela antes de que termine la prueba y no pagas nada.'),
 'Is there a free trial?': ('Y a-t-il un essai gratuit?', 'C’è un periodo di prova gratuito?', '¿Hay un periodo de prueba gratis?'),
 'Yes: 30 days, risk-free. Try every feature; if Dockbook isn’t for you, cancel at least 24 hours before the trial ends and you pay nothing.': ('Oui\xa0: 30\xa0jours, sans risque. Découvrez toutes les fonctionnalités; si Dockbook ne vous convient pas, annulez au moins 24\xa0h avant la fin de l’essai et vous ne payez rien.', 'Sì: 30 giorni, senza rischi. Scopri tutte le funzioni; se Dockbook non fa per te, disdici almeno 24 ore prima della fine della prova e non paghi nulla.', 'Sí: 30 días, sin riesgo. Descubre todas las funciones; si Dockbook no es para ti, cancela al menos 24 horas antes de que termine la prueba y no pagas nada.'),
+'Boater and maker of Boating Dockbook': ('Plaisancier et créateur de Boating Dockbook', 'Diportista e creatore di Boating Dockbook', 'Navegante y creador de Boating Dockbook'),
 }
