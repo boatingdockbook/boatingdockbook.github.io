@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Boating Dockbook – the logbook for powerboats and sailboats</title>
-<meta name="description" content="Trips that record themselves, an anchor alarm you can rely on, weather forecasts tailored to your boat, and every service, fill-up and safety document kept in one place. On iPhone and iPad.">
+<meta name="description" content="Trips that record themselves, an anchor alarm you can rely on, weather rated for your boat, and every service, fill-up and document kept in one place. On iPhone and iPad.">
 <meta property="og:title" content="Boating Dockbook">
-<meta property="og:description" content="Everything about your boat, in one app. On iPhone and iPad.">
+<meta property="og:description" content="Everything for your boating season, in one app. On iPhone and iPad.">
 <meta property="og:image" content="https://boatingdockbook.com/images/shot-01.jpg">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
 <link rel="apple-touch-icon" href="images/icon-180.png">
@@ -201,6 +201,101 @@ footer a{white-space:nowrap}
   .swing{animation:swing 6s ease-in-out infinite alternate;transform-origin:120px 110px}
   @keyframes swing{from{transform:rotate(-24deg)}to{transform:rotate(28deg)}}
 }
+
+/* ---- 2026-11 revision ---- */
+.hero h1{font-size:clamp(42px,6vw,74px)}
+.feat h3{font-size:clamp(28px,3.3vw,40px);line-height:1.1}
+.hero .wrap{padding-block:48px 64px}
+.hero h1 em{color:#9FD3DD}
+.fan{position:relative;height:600px;width:100%;max-width:470px;margin:0 auto}
+.fan .shot{position:absolute;width:230px;padding:7px;border-radius:36px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.fan .shot img{border-radius:30px}
+.fan .front{width:260px;left:50%;top:0;transform:translateX(-50%);z-index:2}
+.fan .back{top:60px;opacity:.92}
+.fan .back.l{left:0;transform:rotate(-8deg)}
+.fan .back.r{right:0;transform:rotate(8deg)}
+.float{position:absolute;z-index:3;background:rgba(255,255,255,.97);color:#0C1F36;border-radius:16px;padding:10px 14px;box-shadow:0 12px 30px rgba(0,0,0,.3);font-weight:600;font-size:14px;line-height:1.3;max-width:250px}
+.float small{display:block;color:#3B4E63;font-weight:500;font-size:12.5px}
+.float .dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3E8E5A;margin-right:6px}
+.hero .fan .shot{border-radius:36px;border-bottom:1px solid #2B3D55;padding:7px}
+.hero .fan .shot img{aspect-ratio:auto;border-radius:30px}
+.fan .f1{left:-40px;top:30px}.fan .f2{right:-50px;top:280px}.fan .f3{left:0;bottom:30px}
+@media (max-width:1100px){.fan .f1{left:-20px}.fan .f2{right:-10px}.fan .f3{left:-20px}}
+@media (max-width:860px){.fan{height:auto;max-width:300px}.fan .back,.fan .float{display:none}.fan .front{position:static;transform:none;width:100%}}
+
+.strip{background:var(--paper-2);border-bottom:1px solid var(--line)}
+.strip ul{list-style:none;margin:0;padding:18px 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 18px;font-weight:600;font-size:14px;color:var(--ink-2)}
+.strip li::before{content:"✓ ";color:var(--go)}
+@media (max-width:860px){.strip ul{justify-content:flex-start}}
+
+.new{display:inline-block;background:var(--brass);color:#fff;font-family:var(--body);font-weight:800;font-size:11px;letter-spacing:.08em;padding:3px 8px;border-radius:6px;margin-left:8px;vertical-align:1px}
+.pair{display:flex;justify-content:center;gap:18px}
+.pair .shot{width:min(240px,47%);padding:7px;border-radius:36px}
+.pair .shot img{border-radius:30px}
+.stage{position:relative;width:min(300px,100%);margin:0 auto}
+.stage .f1{left:-140px;top:110px}.stage .f2{right:-120px;top:330px}.stage .f3{left:-160px;bottom:150px}
+@media (max-width:1100px){.stage .float{display:none}}
+
+/* the anchor map, drawn */
+.anc{background:#16222F;border-radius:44px;padding:9px;border:1px solid #2B3D55;box-shadow:0 30px 60px rgba(4,16,32,.3)}
+.anc .scr{background:#EEF2F6;border-radius:36px;overflow:hidden;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;color:#0E2233}
+.as-top{display:flex;justify-content:space-between;align-items:center;padding:30px 10px 6px;font-size:11px;font-weight:700}
+.as-top span{background:#fff;border-radius:10px;padding:4px 8px;color:#1B6B7A}.as-top b{border:1px solid #A9C3C8;border-radius:10px;padding:3px 8px}
+.as-map{position:relative;margin:0 6px;border-radius:12px;overflow:hidden}
+.as-map svg{display:block;width:100%;height:auto}
+.cap{position:absolute;top:7px;display:flex;align-items:center;background:rgba(250,251,252,.93);border-radius:15px;box-shadow:0 2px 6px rgba(0,0,0,.25);font-size:9.5px;font-weight:700;height:28px;white-space:nowrap}
+.cap.l{left:6px;padding:2px}.cap.l span{padding:0 6px;height:24px;line-height:24px;border-radius:12px;color:#5B6C7B}.cap.l .on{background:#1B6B7A;color:#fff}
+.cap.r{right:6px;padding:0 8px 0 2px;gap:4px;font-weight:600}.cap.r b{color:#1B6B7A;font-weight:900}.cap.r svg{width:24px;height:24px}
+.as-panel{margin:8px 6px 10px;background:#F6F8FA;border-radius:12px;padding:9px}
+.as-ok{background:#3F7D50;color:#fff;border-radius:9px;padding:8px 10px;font-weight:800;font-size:14px}
+.as-acts{display:flex;gap:6px;margin-top:6px}.as-acts span{flex:1;text-align:center;border-radius:9px;padding:7px 0;font-weight:800;font-size:11px}
+.as-acts .a1{background:#E1EEF0;color:#1B6B7A}.as-acts .a2{background:#F6E1DD;color:#B3402E}
+.as-nums{display:flex;justify-content:space-between;margin-top:8px}.as-nums b{display:block;font:900 22px Georgia,serif}.as-nums small{font-weight:800;font-size:8.5px;color:#5B6C7B;letter-spacing:.08em;text-transform:uppercase}
+.as-nums div+div{text-align:right}
+.as-row{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #E1E6EA;margin-top:8px;padding-top:8px;font-size:11px;font-weight:600}
+.as-row i{width:30px;height:17px;border-radius:9px;background:#1B6B7A;position:relative}.as-row i::after{content:"";position:absolute;right:2px;top:2px;width:13px;height:13px;border-radius:50%;background:#fff}
+
+/* trip replay */
+.video{position:relative;width:min(300px,100%);margin:0 auto}
+.video .shot img{aspect-ratio:620/860;object-fit:cover;object-position:top}
+.play{position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;background:rgba(11,31,58,.84);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.vbar{position:absolute;left:34px;right:34px;bottom:66px;height:5px;border-radius:3px;background:rgba(255,255,255,.6)}.vbar i{display:block;width:58%;height:100%;border-radius:3px;background:#D4AE5C}
+.vtag{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);background:#0B1F3A;color:#fff;font-weight:700;font-size:13px;padding:7px 12px;border-radius:10px;white-space:nowrap}
+
+/* water levels */
+.wcard{width:min(420px,100%);margin:0 auto;background:var(--paper-2);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 24px 50px rgba(12,31,54,.12);display:grid;gap:10px}
+.wcard .wh{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.wcard .wt{font-weight:700;font-size:19px}.wcard .ws{font-size:13px;color:var(--ink-2)}.wcard .wv{font-family:var(--display);font-size:34px;line-height:1;white-space:nowrap}
+.chip{justify-self:start;font-weight:700;font-size:14px;padding:6px 10px;border-radius:9px}
+.chip.zero{background:var(--sea-soft);color:var(--sea)}.chip.low{background:#F6E1DA;color:#A3402F}
+.wcard svg{width:100%;height:auto;display:block}
+.wl{display:flex;gap:18px;font-size:13px;color:var(--ink-2)}.wl i{display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:3px;border-radius:2px}
+
+/* sailors */
+.sail{background:var(--night);color:var(--on-night);padding-block:80px}
+.sail h2{color:#fff}
+.sail .g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:36px}
+.sail .c{background:var(--night-2);border:1px solid #1D3A5C;border-radius:20px;padding:24px;display:grid;gap:8px;align-content:start}
+.sail .c h3{color:#fff;font-size:23px}.sail .c p{color:var(--on-night-2);font-size:15.5px}
+@media (max-width:860px){.sail .g{grid-template-columns:1fr}}
+
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--paper-2);border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.story img{width:100%;height:100%;object-fit:cover;display:block}
+.story .t{padding:52px;display:grid;gap:18px;align-content:center}
+.story blockquote{margin:0;font-family:var(--display);font-size:clamp(21px,2.2vw,26px);line-height:1.34}
+.story .by b{display:block}.story .by span{color:var(--ink-2);font-size:15px}
+@media (max-width:860px){.story{grid-template-columns:1fr}.story img{aspect-ratio:4/3;height:auto}.story .t{padding:28px}}
+
+/* closing */
+.final{background:var(--night);color:var(--on-night);text-align:center;padding-block:96px 0;overflow:hidden;position:relative}
+.final h2{color:#fff}
+.final .lede{color:var(--on-night-2);margin:16px auto 0}
+.final .ctas{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;margin-top:28px}
+.final .row{display:flex;justify-content:center;gap:16px;margin-top:56px}
+.final .row .shot{width:180px;padding:6px;border-radius:30px 30px 0 0;border-bottom:0}
+.final .row .shot img{border-radius:24px 24px 0 0;aspect-ratio:620/900;object-fit:cover;object-position:top}
+@media (max-width:860px){.final .row .shot:nth-child(n+4){display:none}.final .row .shot{width:30%}}
 </style>
 <script>
 // Every load or refresh starts at the top of the page, even after a menu link (#faq…) was tapped
@@ -223,7 +318,8 @@ footer a{white-space:nowrap}
   <div class="wrap">
     <nav class="nav" aria-label="Main">
       <a class="hide-sm" href="#features">Features</a>
-      <a class="hide-sm" href="#compare">Why Dockbook</a>
+      <a class="hide-sm" href="#water">Water levels</a>
+      <a class="hide-sm" href="#sailors">Sailors</a>
       <a class="hide-sm" href="#faq">FAQ</a>
       <span class="lang" title="Also in French, Italian and Spanish">EN · FR · IT · ES</span>
     </nav>
@@ -255,9 +351,9 @@ footer a{white-space:nowrap}
         <img src="images/icon-180.png" width="104" height="104" alt="">
         <span class="brand-name"><span class="brand-small">BOATING</span><span class="brand-big">Dockbook</span><span class="brand-tag">More than a logbook.</span></span>
       </div>
-      <p class="eyebrow">The logbook for powerboats and sailboats</p>
-      <h1 style="margin-top:14px">Everything about your boat, <em>in one app</em></h1>
-      <p class="lede">Trips that record themselves, an anchor alarm you can rely on, weather forecasts tailored to your boat, and every service, fill-up and safety document kept in one place. On iPhone and iPad.</p>
+      <p class="eyebrow">For powerboats and sailboats · iPhone and iPad</p>
+      <h1 id="h1" style="margin-top:14px">Everything for your boating season, <em>in one app</em></h1>
+      <p class="lede">Trips that record themselves, an anchor alarm you can rely on, weather rated for your boat, and every service, fill-up and document kept in one place.</p>
       <div class="ctas">
         <a class="btn btn-store" href="#" aria-label="Download on the App Store">
           <svg width="22" height="26" viewBox="0 0 24 28" aria-hidden="true"><path fill="#fff" d="M19.6 14.9c0-3.2 2.6-4.7 2.7-4.8-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.1-4.8 1.1s-2.5-1.1-4.2-1.1C6.6 7.6 4.6 8.9 3.4 11c-2.3 4-.6 9.9 1.7 13.1 1.1 1.6 2.4 3.4 4.1 3.3 1.6-.1 2.3-1.1 4.3-1.1s2.5 1.1 4.2 1 2.8-1.6 3.8-3.2c1.2-1.8 1.7-3.6 1.7-3.7 0 0-3.6-1.4-3.6-5.5zM16.4 5.4c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.7 1.9-.8.9-1.5 2.5-1.3 3.9 1.4.1 2.8-.7 3.7-1.7z"/></svg>
@@ -266,111 +362,143 @@ footer a{white-space:nowrap}
         <span class="soon">Coming soon</span>
       </div>
     </div>
-    <div class="shot wake"><img src="images/shot-01.jpg" alt="Dockbook’s Trips screen: the season’s distance, the latest trip with its map, weather, and crew" width="620" height="1006"></div>
+    <div class="fan wake">
+      <div class="shot back l"><img loading="lazy" src="images/shot-12.jpg" alt="A day’s forecast for your boat: good conditions and the best hours to go"></div>
+      <div class="shot back r"><img loading="lazy" src="images/shot-01.jpg" alt="Dockbook’s Trips screen: the season’s distance and the latest trip with its map"></div>
+      <div class="shot front"><img src="images/shot-11.jpg" alt="A boat’s page with its photo and every section: vessel, trips, weather, fuel, maintenance and papers"></div>
+      <div class="float f1" aria-hidden="true"><span class="dot"></span>Trip recorded · 18.2 nm<small>Rouses Point → Valcour, on its own</small></div>
+      <div class="float f2" aria-hidden="true">Saturday looks green<small>Best hours 9:00–17:00 for your boat</small></div>
+      <div class="float f3" aria-hidden="true">🔧 Oil change due in 12 h<small>Engine hours counted from your trips</small></div>
+    </div>
   </div>
 </section>
 
-<section id="features" aria-labelledby="feat-h">
-  <div class="wrap">
-    <div class="band-head">
-      <p class="eyebrow">What it does</p>
-      <h2 id="feat-h">A season on the water, written down by itself</h2>
-      <p class="lede">Dockbook works while you’re out on the water. It notices when you leave the dock, keeps watch while you’re at anchor, and turns every outing into a page of your boat’s history.</p>
-    </div>
+<div class="strip"><div class="wrap"><ul>
+  <li>Made on Lake Champlain</li><li>Works offline on the water</li><li>No ads, no tracking</li><li>Your data in your own iCloud</li><li>English · Français · Italiano · Español</li>
+</ul></div></div>
 
+<section id="features" aria-label="Features">
+  <div class="wrap">
     <article class="feat">
+      <div class="copy">
+        <p class="eyebrow">Anchor watch</p>
+        <h3>A night at anchor, without one eye open.</h3>
+        <p>Drop the anchor, pick the circle, go to sleep. The wind drifts across the map so you see what the boat feels. Dockbook warns you before a wind shift and sounds the alarm if the boat drags, even with the screen locked.</p>
+        <ul>
+          <li>Live wind on the map, with “Wind up” so the boat lies below its anchor</li>
+          <li>Going ashore in the tender? One tap pauses the watch</li>
+          <li>GPS smoothing: no false alarms at 3 a.m.</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="stage"><div class="anc" role="img" aria-label="The anchor watch: the swing circle on a satellite map with the wind drifting across it, and the boat lying downwind of its anchor"><div class="scr">
+<div class="as-top" aria-hidden="true"><span>Close</span><b>Satellite + chart</b><span>?</span></div>
+<div class="as-map"><svg viewBox="0 0 300 330" aria-hidden="true"><defs><radialGradient id="wat" cx="40%" cy="50%" r="80%"><stop offset="0" stop-color="#3f7f93"/><stop offset="1" stop-color="#2a5f73"/></radialGradient></defs>
+<rect width="300" height="330" fill="url(#wat)"/><path d="M210,0 C230,80 250,130 300,170 L300,0Z" fill="#4d6b3c"/><path d="M300,170 C260,140 240,90 215,0" fill="none" stroke="#c8b98a" stroke-width="5" opacity=".6"/>
+<g fill="#3e5a30"><circle cx="286" cy="50" r="8"/><circle cx="265" cy="95" r="5"/><circle cx="286" cy="20" r="6"/><circle cx="248" cy="3" r="6"/><circle cx="277" cy="115" r="8"/><circle cx="291" cy="83" r="6"/><circle cx="279" cy="105" r="9"/><circle cx="270" cy="84" r="7"/><circle cx="249" cy="70" r="9"/><circle cx="248" cy="2" r="5"/><circle cx="291" cy="92" r="10"/><circle cx="246" cy="67" r="10"/><circle cx="299" cy="17" r="8"/><circle cx="295" cy="24" r="6"/><circle cx="241" cy="32" r="6"/><circle cx="258" cy="64" r="6"/></g><line x1="97" y1="24" x2="97" y2="50" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="97" y1="24" x2="97" y2="50" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="22" y1="154" x2="22" y2="177" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="22" y1="154" x2="22" y2="177" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="149" x2="17" y2="167" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="17" y1="149" x2="17" y2="167" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="130" y1="4" x2="130" y2="23" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="130" y1="4" x2="130" y2="23" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="127" y1="253" x2="127" y2="273" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="127" y1="253" x2="127" y2="273" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="67" y1="178" x2="67" y2="207" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="67" y1="178" x2="67" y2="207" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="173" y1="101" x2="173" y2="131" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="173" y1="101" x2="173" y2="131" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="14" y1="262" x2="14" y2="283" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="14" y1="262" x2="14" y2="283" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="43" y1="17" x2="43" y2="39" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="43" y1="17" x2="43" y2="39" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="245" y1="35" x2="245" y2="60" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="245" y1="35" x2="245" y2="60" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="192" y1="98" x2="192" y2="123" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="192" y1="98" x2="192" y2="123" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="-1" x2="19" y2="20" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="19" y1="-1" x2="19" y2="20" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="204" y1="119" x2="204" y2="141" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="204" y1="119" x2="204" y2="141" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="176" y1="128" x2="176" y2="150" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="176" y1="128" x2="176" y2="150" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="238" y1="210" x2="238" y2="231" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="238" y1="210" x2="238" y2="231" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="172" y1="145" x2="172" y2="173" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="172" y1="145" x2="172" y2="173" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="219" y1="65" x2="219" y2="95" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="219" y1="65" x2="219" y2="95" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="111" x2="35" y2="138" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="35" y1="111" x2="35" y2="138" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="46" y1="143" x2="46" y2="161" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="46" y1="143" x2="46" y2="161" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="200" y1="227" x2="200" y2="252" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="200" y1="227" x2="200" y2="252" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="263" y1="77" x2="263" y2="104" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="263" y1="77" x2="263" y2="104" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="178" y1="168" x2="178" y2="191" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="178" y1="168" x2="178" y2="191" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="252" y1="288" x2="252" y2="312" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="252" y1="288" x2="252" y2="312" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="199" y1="-6" x2="199" y2="20" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="199" y1="-6" x2="199" y2="20" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="194" y1="300" x2="194" y2="328" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="194" y1="300" x2="194" y2="328" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="85" y1="101" x2="85" y2="127" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="85" y1="101" x2="85" y2="127" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="7" y1="132" x2="7" y2="152" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="7" y1="132" x2="7" y2="152" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="35" y1="-8" x2="35" y2="19" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="35" y1="-8" x2="35" y2="19" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="39" y1="59" x2="39" y2="82" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="39" y1="59" x2="39" y2="82" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="261" y1="3" x2="261" y2="27" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="261" y1="3" x2="261" y2="27" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="165" y1="264" x2="165" y2="292" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="165" y1="264" x2="165" y2="292" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="259" y1="69" x2="259" y2="92" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="259" y1="69" x2="259" y2="92" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="108" y1="262" x2="108" y2="292" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="108" y1="262" x2="108" y2="292" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="45" y1="37" x2="45" y2="58" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="45" y1="37" x2="45" y2="58" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="70" y1="135" x2="70" y2="160" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="70" y1="135" x2="70" y2="160" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="79" y1="-22" x2="79" y2="1" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="79" y1="-22" x2="79" y2="1" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="111" y1="157" x2="111" y2="187" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="111" y1="157" x2="111" y2="187" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="207" y1="145" x2="207" y2="170" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="207" y1="145" x2="207" y2="170" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="203" y1="-11" x2="203" y2="18" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="203" y1="-11" x2="203" y2="18" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="234" y1="261" x2="234" y2="289" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="234" y1="261" x2="234" y2="289" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="118" y1="112" x2="118" y2="132" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="118" y1="112" x2="118" y2="132" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="190" y1="2" x2="190" y2="21" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="190" y1="2" x2="190" y2="21" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="63" y1="31" x2="63" y2="54" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="63" y1="31" x2="63" y2="54" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="-20" x2="16" y2="0" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="16" y1="-20" x2="16" y2="0" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="102" x2="30" y2="120" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="30" y1="102" x2="30" y2="120" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="262" y1="183" x2="262" y2="203" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="262" y1="183" x2="262" y2="203" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="76" y1="92" x2="76" y2="115" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="76" y1="92" x2="76" y2="115" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="37" y1="250" x2="37" y2="280" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="37" y1="250" x2="37" y2="280" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="140" y1="141" x2="140" y2="160" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="140" y1="141" x2="140" y2="160" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="31" y1="92" x2="31" y2="113" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="31" y1="92" x2="31" y2="113" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="249" y1="35" x2="249" y2="53" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="249" y1="35" x2="249" y2="53" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="285" y1="155" x2="285" y2="174" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="285" y1="155" x2="285" y2="174" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="163" y1="-15" x2="163" y2="9" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="163" y1="-15" x2="163" y2="9" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="294" y1="259" x2="294" y2="285" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="294" y1="259" x2="294" y2="285" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="78" y1="101" x2="78" y2="121" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="78" y1="101" x2="78" y2="121" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="232" y1="148" x2="232" y2="176" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="232" y1="148" x2="232" y2="176" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="99" y1="46" x2="99" y2="74" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="99" y1="46" x2="99" y2="74" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="295" y1="254" x2="295" y2="281" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="295" y1="254" x2="295" y2="281" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="245" y1="223" x2="245" y2="244" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="245" y1="223" x2="245" y2="244" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="155" y1="99" x2="155" y2="117" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="155" y1="99" x2="155" y2="117" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="8" y1="71" x2="8" y2="92" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="8" y1="71" x2="8" y2="92" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="208" y1="292" x2="208" y2="316" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="208" y1="292" x2="208" y2="316" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="281" y1="297" x2="281" y2="326" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="281" y1="297" x2="281" y2="326" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="109" y1="52" x2="109" y2="73" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="109" y1="52" x2="109" y2="73" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="59" y1="42" x2="59" y2="67" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="59" y1="42" x2="59" y2="67" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="270" y1="254" x2="270" y2="277" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="270" y1="254" x2="270" y2="277" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="196" y1="245" x2="196" y2="264" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="196" y1="245" x2="196" y2="264" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="198" y1="273" x2="198" y2="300" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="198" y1="273" x2="198" y2="300" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="225" y1="138" x2="225" y2="158" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="225" y1="138" x2="225" y2="158" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/><line x1="237" y1="82" x2="237" y2="110" stroke="#08202f" stroke-opacity=".35" stroke-width="3.6" stroke-linecap="round"/><line x1="237" y1="82" x2="237" y2="110" stroke="#fff" stroke-opacity=".92" stroke-width="2" stroke-linecap="round"/>
+<circle cx="150" cy="192" r="92" fill="#1b6b7a" fill-opacity=".16" stroke="#7fd0dc" stroke-width="2.4"/><circle cx="150" cy="192" r="74" fill="none" stroke="#7fd0dc" stroke-opacity=".5" stroke-dasharray="4 4"/>
+<line x1="150" y1="192" x2="150" y2="247" stroke="#fff" stroke-dasharray="3 3" stroke-width="1.3"/><path transform="translate(150,248)" d="M0,-12 C6,-4 6,6 4,11 L-4,11 C-6,6 -6,-4 0,-12Z" fill="#1f3a66" stroke="#fff" stroke-width="1.6"/>
+<circle cx="150" cy="192" r="16" fill="#1f3a66"/><path transform="translate(150,192)" d="M0,-9 a2.4,2.4 0 1 1 0.01,0 M0,-6.6 V8 M-5,-3 H5 M-8,2 C-7,7 -3,9 0,9 C3,9 7,7 8,2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/>
+<text x="8" y="322" font-size="10" fill="#fff" font-family="Arial" font-weight="700"> Maps</text></svg><div class="cap l"><span>N up</span><span class="on">Wind up</span></div><div class="cap r"><svg viewBox="-20 -20 40 40" aria-hidden="true"><circle r="19.3" fill="#fff" stroke="#d6dde3"/><line x1="0" y1="-17.5" x2="0" y2="-14" stroke="#7d8b97" stroke-width="1.6" transform="rotate(-68)"/><line x1="0" y1="-17.5" x2="0" y2="-14" stroke="#7d8b97" stroke-width="1.6" transform="rotate(22)"/><line x1="0" y1="-17.5" x2="0" y2="-14" stroke="#7d8b97" stroke-width="1.6" transform="rotate(112)"/><line x1="0" y1="-17.5" x2="0" y2="-14" stroke="#7d8b97" stroke-width="1.6" transform="rotate(202)"/><g transform="rotate(-68)"><path d="M0,-19.3 l4,6.6 h-8z" fill="#d63a2b"/></g><g transform="rotate(0)"><path d="M0,-2 L-5,-16 L0,-12.3 L5,-16z" fill="#1b6b7a"/></g></svg><span><b>WNW</b> 9 km/h</span></div></div>
+<div class="as-panel"><div class="as-ok">✓ Anchor secure</div><div class="as-acts"><span class="a1">Going ashore</span><span class="a2">Stop watch</span></div>
+<div class="as-nums"><div><b>73 ft</b><small>From the anchor</small></div><div><b>130 ft</b><small>Alarm at</small></div></div>
+<div class="as-row"><span>Wind alert</span><i></i></div></div></div></div>
+        <div class="float f1" aria-hidden="true"><span class="dot"></span>Anchor secure · 73 ft<small>Watching all night, screen locked</small></div>
+        <div class="float f2" aria-hidden="true">Wind shift at 3 a.m.<small>→ SW 15 km/h · you’ll know first</small></div>
+        <div class="float f3" aria-hidden="true">🔔 Alarm if the boat drags<small>Even with the phone asleep</small></div>
+      </div></div>
+    </article>
+
+    <article class="feat flip">
       <div class="copy">
         <p class="eyebrow">Automatic trips</p>
         <h3>Leave the dock. The logbook fills itself in.</h3>
-        <p>Dockbook detects when you leave your marina or anchorage and records the trip in the background, then names it after your saved places or the nearest marina, bay or town.</p>
+        <p>No button to remember. Dockbook notices when you leave your marina or anchorage, records the trip in the background, and names it after your places or the nearest marina, bay or town.</p>
         <ul>
-          <li>Route, time, distance, speeds and fuel for every outing</li>
-          <li>Weather and water levels recorded along the way, hour by hour</li>
-          <li>A logbook page you can share as a PDF, and a replay on the map</li>
+          <li>Route, time, distance, speeds, fuel and engine hours for every outing</li>
+          <li>The weather and water level along the way, hour by hour</li>
+          <li>Your season at a glance: trips, days on the water, who came aboard</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-02.jpg" alt="Recording a trip: the track on a chart, speed, heading, distance, and time underway"></div></div>
-    </article>
-
-    <article class="feat flip">
-      <div class="copy">
-        <p class="eyebrow">Anchor watch</p>
-        <h3>Sleep at anchor. Dockbook keeps the watch.</h3>
-        <p>Mark the anchor where it went down, or ahead of the bow using the compass, and then choose the swing circle. The alarm sounds if the boat starts dragging, even with the screen locked.</p>
-        <ul>
-          <li>GPS smoothing to avoid false alarms</li>
-          <li>Wind and storm alerts for where you’re anchored</li>
-          <li>Map, marine chart, or satellite under the circle</li>
-        </ul>
-      </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-03.jpg" alt="The anchor watch: the swing circle on the chart, distance from the anchor, and the alarm radius"></div></div>
+      <div class="demo has-shot"><div class="pair"><div class="shot"><img loading="lazy" src="images/shot-01.jpg" alt="Dockbook’s Trips screen: the season’s distance and the latest trip with its map"></div><div class="shot"><img loading="lazy" src="images/shot-08.jpg" alt="Season summary: trips, days on the water, distance, engine hours and crew"></div></div></div>
     </article>
 
     <article class="feat">
       <div class="copy">
-        <p class="eyebrow">Weather &amp; wind</p>
-        <h3>Weather forecasts tailored to your boat</h3>
-        <p>Set the wind, gust, and wave limits (when available) that suit your boat and crew. Every hour of the next ten days is color-coded green, yellow, orange, or red against those limits.</p>
+        <p class="eyebrow">Trip replay <span class="new">NEW</span></p>
+        <h3>Relive the day. Share it in 12 seconds.</h3>
+        <p>Play any trip back on the map with the radar, wind and waves of that hour, then share it as a short vertical video, ready for social media or the family chat.</p>
         <ul>
-          <li>Radar, rain forecast, wind, and waves on one map with one time slider</li>
-          <li>Real-time readings from the nearest buoys and stations</li>
-          <li>The best time to leave along a planned route</li>
+          <li>Your boat in its colours, the weather it met and a summary at the end</li>
+          <li>Your choice of map: chart, satellite or both</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-04.jpg" alt="The weather map on Lake Champlain: wind arrows, wave heights, and a buoy reading rated for this boat, with one time slider"></div></div>
+      <div class="demo has-shot"><div class="video"><div class="shot"><img loading="lazy" src="images/shot-02.jpg" alt="A trip’s track on the marine chart, ready to play back"></div><span class="play" aria-hidden="true"><svg width="28" height="30" viewBox="0 0 28 30"><path d="M4 2 L26 15 L4 28 Z" fill="#fff"/></svg></span><span class="vbar" aria-hidden="true"><i></i></span><span class="vtag" aria-hidden="true">Rouses Point → Valcour · 0:12</span></div></div>
     </article>
 
     <article class="feat flip">
       <div class="copy">
-        <p class="eyebrow">Fuel, maintenance, and true cost</p>
-        <h3>Know what your boat really costs, per hour</h3>
-        <p>Log fill-ups and services in seconds, scan the receipt, and let Dockbook remind you when the next oil change or impeller replacement is due, by engine hours or by date.</p>
+        <p class="eyebrow">Weather for your boat</p>
+        <h3>Green means go. For your boat, not everyone’s.</h3>
+        <p>Set the wind, gust and wave limits that suit your boat and crew. Every hour of the next ten days turns green, yellow, orange or red against your own limits.</p>
         <ul>
-          <li>Service intervals per engine, with serial numbers and parts</li>
-          <li>A to-do list linked to what you need to buy for each job</li>
-          <li>The real cost per hour and per season, insurance and slip included</li>
+          <li>Your limits for wind, gusts and waves, boat by boat</li>
+          <li>Radar, rain, wind and waves on one map with one slider</li>
+          <li>Storm and wind alerts where you are, even at anchor</li>
+          <li>The best hours to leave for your planned route</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-05.jpg" alt="Service intervals by engine hours and by date, with what is due soon"></div></div>
+      <div class="demo has-shot"><div class="pair"><div class="shot"><img loading="lazy" src="images/shot-12.jpg" alt="A day’s forecast for your boat: good conditions and the best hours to go"></div><div class="shot"><img loading="lazy" src="images/shot-04.jpg" alt="The weather map on Lake Champlain: wind arrows, wave heights and a buoy reading rated for this boat, with one time slider"></div></div></div>
     </article>
 
-    <article class="feat">
+    <article class="feat" id="water">
       <div class="copy">
-        <p class="eyebrow">Safety gear and papers</p>
-        <h3>Ready for a safety check</h3>
-        <p>Dockbook identifies the equipment required for your boat’s size and waters, based on Transport Canada and U.S. Coast Guard rules, and tells you what’s missing or about to expire.</p>
+        <p class="eyebrow">Water levels <span class="new">NEW</span></p>
+        <h3>Know the lake before you leave the dock.</h3>
+        <p>Live levels from thousands of gauges on lakes and rivers in Canada and the United States. On Lake Champlain, Dockbook shows how the water compares with your chart, and how this season compares with last year.</p>
         <ul>
-          <li>Flares, extinguishers, life jackets, and lights, counted and dated</li>
-          <li>License, registration, and insurance, with renewal reminders</li>
-          <li>A safety checklist to print or show on the phone</li>
+          <li>7 days, 30 days, the season or the year, with the usual range</li>
+          <li>Red when the lake is below chart zero: shallow spots get shallower</li>
         </ul>
       </div>
-      <div class="demo has-shot"><div class="shot"><img loading="lazy" src="images/shot-06.jpg" alt="Papers and safety: the safety equipment this boat must carry, each item to check, and its papers"></div></div>
+      <div class="demo has-shot"><div class="wcard"><div class="wh"><div><div class="wt">Lake Champlain</div><div class="ws">Rouses Point</div></div><div class="wv">0.80 ft</div></div>
+<span class="chip zero">0.80 ft above chart zero</span>
+<span class="chip low">▼ 0.31 ft lower than last year</span>
+<svg viewBox="0 0 300 120" aria-hidden="true"><path d="M0,36 L5,34 L10,33 L15,33 L20,32 L25,31 L30,30 L35,30 L40,30 L45,30 L50,30 L55,30 L60,30 L65,30 L70,31 L75,31 L80,32 L85,33 L90,34 L95,35 L100,36 L105,38 L110,39 L115,40 L120,42 L125,43 L130,44 L135,46 L140,47 L145,48 L150,50 L155,51 L160,52 L165,53 L170,54 L175,55 L180,56 L185,56 L190,57 L195,57 L200,57 L205,57 L210,57 L215,57 L220,57 L225,56 L230,56 L235,55 L240,54 L245,53 L250,52 L255,51 L260,50 L265,49 L270,47 L275,46 L280,45 L285,43 L290,42 L295,40" fill="none" stroke="#C9A04A" stroke-width="2" stroke-dasharray="5 4"/><path d="M0,67 L5,62 L10,63 L15,63 L20,58 L25,55 L30,58 L35,56 L40,51 L45,51 L50,54 L55,51 L60,47 L65,50 L70,52 L75,48 L80,47 L85,52 L90,53 L95,49 L100,51 L105,56 L110,56 L115,54 L120,58 L125,63 L130,62 L135,61 L140,67 L145,70 L150,68 L155,70 L160,76 L165,77 L170,74 L175,78 L180,83 L185,81 L190,79 L195,84 L200,86 L205,82 L210,82 L215,86 L220,85 L225,81 L230,82 L235,85 L240,81 L245,77 L250,79 L255,79 L260,74 L265,71 L270,73 L275,72 L280,65 L285,64 L290,66 L295,63" fill="none" stroke="#2E6F7E" stroke-width="3"/><line x1="0" y1="110" x2="300" y2="110" stroke="#C45A2A" stroke-dasharray="3 3"/></svg>
+<div class="wl"><span><i style="background:#2E6F7E"></i>This season</span><span><i style="background:#C9A04A"></i>Last year</span><span><i style="background:#C45A2A"></i>Chart zero</span></div></div></div>
     </article>
   </div>
 </section>
 
-
-<section style="padding-top:0" aria-labelledby="gal-h">
+<section class="sail" id="sailors" aria-labelledby="sail-h">
   <div class="wrap">
-    <div class="band-head">
-      <p class="eyebrow">A look inside</p>
-      <h2 id="gal-h">Your whole season, one tap away</h2>
-    </div>
-    <div class="gallery" tabindex="0" aria-label="Screenshots (scroll sideways)">
-      <figure><div class="shot"><img loading="lazy" src="images/shot-07.jpg" alt="Planning a route on the marine chart with numbered waypoints"></div><figcaption><b>Plan a route</b> Waypoints on the marine chart, distance, time, and fuel.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-12.jpg" alt="A day’s forecast for your boat: good conditions, best hours, and wind hour by hour in color"></div><figcaption><b>Your boat’s forecast</b> Each day rated against your own limits, with the best hours to go.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-13.jpg" alt="Aiming the phone at the anchor over the bow to lock its direction, with wind and storm alerts on"></div><figcaption><b>Aim at the anchor</b> For accuracy, point the phone where the anchor went down: the alarm knows where it is, not just where you were.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-08.jpg" alt="Season summary: trips, days on the water, distance, engine hours, and crew"></div><figcaption><b>Season summary</b> Trips, days on the water, your longest trip, and who came aboard.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-09.jpg" alt="Reports: total cost, fuel, maintenance, and cost per hour and by year"></div><figcaption><b>Reports</b> What the boat costs, by year and by category.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-10.jpg" alt="Fuel log: each fill-up with the place, liters, and price"></div><figcaption><b>Fuel log</b> Every fill-up with the place, volume, and price per liter.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-11.jpg" alt="A boat’s page with its photo and every section: vessel, trips, fuel, maintenance, and papers"></div><figcaption><b>Your boat</b> Everything about it from one page, for every boat you own.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-14.jpg" alt="Fuel range rings around a planned route on Lake Champlain, with the fuel left on arrival"></div><figcaption><b>Fuel range</b> How far you can go on what’s aboard, with a reserve, and what’s left on arrival.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-15.jpg" alt="The boat history report PDF: vessel details, engines, and the full maintenance history with costs"></div><figcaption><b>Boat history report</b> A full PDF of the boat’s life for a buyer, an insurer, or a surveyor.</figcaption></figure>
-      <figure><div class="shot"><img loading="lazy" src="images/shot-16.jpg" alt="An expense filled in from a scanned marina receipt: amount, date, vendor, and category"></div><figcaption><b>Scan a receipt</b> Amount, date, and vendor are read on your iPhone; nothing is sent anywhere.</figcaption></figure>
+    <p class="eyebrow" style="color:#D4AE5C">Sailors too</p>
+    <h2 id="sail-h" style="margin-top:12px">Built for the wind, not just the engine.</h2>
+    <div class="g">
+      <div class="c"><h3>Point of sail on every leg</h3><p>Beam reach, close-hauled or a long beat: see it on your route before you go.</p></div>
+      <div class="c"><h3>“Good sailing”</h3><p>The hours when the wind sits in your boat’s best range, flagged for you.</p></div>
+      <div class="c"><h3>Gusts that matter</h3><p>For sailboats, gusts count for more, just as they do for a sailor.</p></div>
     </div>
   </div>
 </section>
+
+<section aria-label="Maintenance, costs and safety">
+  <div class="wrap">
+    <article class="feat flip" style="border-top:0;padding-block:0">
+      <div class="copy">
+        <p class="eyebrow">Maintenance, costs and safety</p>
+        <h3>The boring part, done for you.</h3>
+        <p>Engine hours from your trips trigger the services, and the services fill the shopping list. Scan receipts with your iPhone, and Dockbook checks your safety gear against Transport Canada and U.S. Coast Guard rules.</p>
+        <ul>
+          <li>What your boat really costs, per hour and per season</li>
+          <li>Flares, extinguishers and papers, with renewal reminders</li>
+          <li>A boat history report for a buyer, an insurer or a surveyor</li>
+        </ul>
+      </div>
+      <div class="demo has-shot"><div class="pair"><div class="shot"><img loading="lazy" src="images/shot-05.jpg" alt="Service intervals by engine hours and by date, with what is due soon"></div><div class="shot"><img loading="lazy" src="images/shot-09.jpg" alt="Reports: total cost, fuel, maintenance, and cost per hour and by year"></div></div></div>
+    </article>
+  </div>
+</section>
+
 <section style="padding-top:0" aria-labelledby="all-h">
   <div class="wrap">
     <div class="band-head">
@@ -378,15 +506,29 @@ footer a{white-space:nowrap}
       <h2 id="all-h">The rest of the toolbox</h2>
     </div>
     <div class="grid">
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg></span><h4>Route planner</h4><p>Marine charts, waypoints, multi-day trips with overnight stops, and fuel range rings.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4>Your places</h4><p>Anchorages, marinas, and fuel docks with depth, bottom type, photos, and notes.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18a5 5 0 1 1 .8-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg></span><h4>iCloud on iPhone and iPad</h4><p>Your boats, trips, and settings on all your devices with the same Apple Account.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h4>Season memory book</h4><p>Your whole season as a PDF: trips, photos, costs, and the logbook.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h4>Lock screen and widgets</h4><p>Trip recording and the anchor watch, live on the lock screen and Dynamic Island.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span><h4>Import and export</h4><p>GPX tracks and routes, spreadsheets (CSV), and full password-protected backups.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/></svg></span><h4>Route planner</h4><p>Marine charts, waypoints, multi-day trips with overnight stops and fuel range rings.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h4>Your places</h4><p>Anchorages, marinas and fuel docks with depth, bottom type, photos and notes.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 18a5 5 0 1 1 .8-9.9A6 6 0 0 1 19 10a4 4 0 0 1-1 8z"/></svg></span><h4>iCloud on iPhone and iPad</h4><p>Your boats, trips and settings on all your devices signed in with the same Apple Account.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><h4>Season memory book</h4><p>Your whole season as a PDF: trips, photos, costs and the logbook.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></span><h4>Lock Screen and widgets</h4><p>Trip recording and the anchor watch, live on the Lock Screen and in the Dynamic Island.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></span><h4>Import and export</h4><p>GPX tracks and routes, spreadsheets (CSV) and full password-protected backups.</p></div>
       <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><h4>Face ID</h4><p>Keep your logbook, papers and costs private on a shared iPad.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></span><h4>Siri and Shortcuts</h4><p>“Start a trip” or “Watch the anchor” without opening the app.</p></div>
-      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><h4>Four languages</h4><p>English, French, Italian, and Spanish, with your choice of units.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v11H8l-4 4z"/></svg></span><h4>Siri and Shortcuts</h4><p>“Start a trip” or “Sails up” without opening the app.</p></div>
+      <div><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></span><h4>Four languages</h4><p>English, French, Italian and Spanish, with your choice of units.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<section aria-label="Why I built it" style="padding-top:0">
+  <div class="wrap">
+    <div class="story">
+      <img loading="lazy" src="images/story.jpg" alt="Two people watching the sunset over the lake from the shore" width="1100" height="825">
+      <div class="t">
+        <p class="eyebrow">Why I built it</p>
+        <blockquote>“I wanted one app that knew my boat: where we went, what it cost, when the impeller was due. One that told me if the wind, the gusts and the waves were right for us today, how high the lake was, and that would wake me if a storm rolled in or the anchor slipped. So I built it, the app I wished I’d had on my first day on the water.”</blockquote>
+        <p class="by"><b>Hugo</b><span>Boater and maker of Dockbook</span></p>
+      </div>
     </div>
   </div>
 </section>
@@ -396,7 +538,7 @@ footer a{white-space:nowrap}
     <div class="band-head">
       <p class="eyebrow">Why Dockbook</p>
       <h2 id="cmp-h">One app instead of several</h2>
-      <p class="lede">Most boaters keep a paper logbook for trips, a notes app for services and maintenance, a weather app, and an anchor alarm. Dockbook brings them all together and connects them: your trips log the engine hours, the hours trigger the services, and the services fill the shopping list.</p>
+      <p class="lede">Many boaters keep a paper logbook for trips, a notes app for services and maintenance, a weather app, and an anchor alarm. Dockbook brings them all together and connects them: your trips log the engine hours, the hours trigger the services, and the services fill the shopping list.</p>
     </div>
     <div class="compare">
       <table>
@@ -404,7 +546,8 @@ footer a{white-space:nowrap}
         <tbody>
           <tr><th scope="row">Automatic trip recording</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Some</td></tr>
           <tr><th scope="row">Weather rated against your limits</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">Rarely</td></tr>
-          <tr><th scope="row">Anchor alarm with GPS smoothing</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">One more app</td></tr>
+          <tr><th scope="row">Anchor alarm with live wind</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">One more app</td></tr>
+          <tr><th scope="row">Water level against the chart and last year</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">—</td></tr>
           <tr><th scope="row">Maintenance reminders by engine hours</th><td class="us"><span class="y">✓</span></td><td class="n">By hand</td><td class="n">Rarely</td></tr>
           <tr><th scope="row">Safety gear checked against the rules</th><td class="us"><span class="y">✓</span></td><td class="n">By hand</td><td class="n">—</td></tr>
           <tr><th scope="row">True cost per hour and per season</th><td class="us"><span class="y">✓</span></td><td class="n">—</td><td class="n">A spreadsheet</td></tr>
@@ -415,25 +558,38 @@ footer a{white-space:nowrap}
   </div>
 </section>
 
-<section id="privacy" aria-label="Privacy">
-  <div class="wrap">
-    <div class="panel privacy">
-      <p class="eyebrow" style="color:var(--sea)">Privacy</p>
-      <h3>Your boat’s history belongs to you</h3>
-      <p style="color:var(--ink-2)">Your logbook stays on your devices and in your own iCloud account. No ads, no tracking, no account to create. Back everything up to a single file whenever you like.</p>
-      <p><a href="privacy.html" style="color:var(--sea);font-weight:700">Read the privacy policy</a></p>
-    </div>
+
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap" style="max-width:860px">
+    <div class="band-head"><p class="eyebrow">Questions</p><h2 id="faq-h">Before you cast off</h2></div>
+    <details><summary>Does Dockbook work without cellular coverage?</summary><p>Yes. Trips, the anchor watch and your logbook work offline. Weather and charts load when you have a connection, and trips get their weather once you’re back in range.</p></details>
+    <details><summary>What boats does Dockbook support?</summary><p>Powerboats, sailboats and personal watercraft, with one or more engines: outboard, sterndrive, inboard or saildrive. You can keep several boats.</p></details>
+    <details><summary>Can I use Dockbook on a Wi‑Fi‑only iPad?</summary><p>Yes, for everything at the dock. A Wi‑Fi‑only iPad has no GPS, so let your iPhone record the trips and watch the anchor; the trips then appear on the iPad through iCloud.</p></details>
+    <details><summary>Can I bring in my existing logbook?</summary><p>Yes. Import trips from GPX files and your records from a spreadsheet (CSV). Dockbook matches them to your boat.</p></details>
+    <details><summary>Where is my data?</summary><p>On your devices and in your own iCloud account. No ads, no tracking, no account to create, and you can back everything up to a single file whenever you like. <a href="privacy.html" style="color:var(--sea);font-weight:700">Read the privacy policy</a></p></details>
+    <details><summary>Is it a navigation app?</summary><p>No. Dockbook’s charts and weather are for planning. Always carry official charts and all the safety equipment required for your boat and waters.</p></details>
   </div>
 </section>
 
-<section id="faq" style="padding-top:0" aria-labelledby="faq-h">
-  <div class="wrap" style="max-width:860px">
-    <div class="band-head"><p class="eyebrow">Questions</p><h2 id="faq-h">Before you cast off</h2></div>
-    <details><summary>Does Dockbook work without cellular coverage?</summary><p>Yes. Trips, the anchor watch, and your logbook work offline. Weather and charts load when you have a connection, and trips get their weather once you’re back in range.</p></details>
-    <details><summary>What boats does Dockbook support?</summary><p>Powerboats, sailboats, and personal watercraft, with one or more engines: outboard, sterndrive, inboard, or saildrive. You can keep several boats.</p></details>
-    <details><summary>Can I use Dockbook on a Wi‑Fi‑only iPad?</summary><p>Yes, for everything at the dock. A Wi‑Fi‑only iPad has no GPS, so let your iPhone record the trips and watch the anchor; they then appear on the iPad through iCloud.</p></details>
-    <details><summary>Can I bring my existing logbook?</summary><p>Import trips from GPX files and your records from a spreadsheet (CSV). Dockbook matches them to your boat.</p></details>
-    <details><summary>Is it a navigation app?</summary><p>No. Dockbook’s charts and weather are for planning. Always carry official charts and all the safety equipment required for your boat and waters.</p></details>
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <img src="images/icon-180.png" width="84" height="84" alt="" style="border-radius:20px;box-shadow:0 10px 30px rgba(0,0,0,.35)">
+    <h2 id="final-h" style="margin-top:22px">Be ready for opening day.</h2>
+    <p class="lede">Your logbook, your boat’s weather and your anchor watch, all in one app on iPhone and iPad.</p>
+    <div class="ctas">
+        <a class="btn btn-store" href="#" aria-label="Download on the App Store">
+          <svg width="22" height="26" viewBox="0 0 24 28" aria-hidden="true"><path fill="#fff" d="M19.6 14.9c0-3.2 2.6-4.7 2.7-4.8-1.5-2.2-3.8-2.5-4.6-2.5-2-.2-3.8 1.1-4.8 1.1s-2.5-1.1-4.2-1.1C6.6 7.6 4.6 8.9 3.4 11c-2.3 4-.6 9.9 1.7 13.1 1.1 1.6 2.4 3.4 4.1 3.3 1.6-.1 2.3-1.1 4.3-1.1s2.5 1.1 4.2 1 2.8-1.6 3.8-3.2c1.2-1.8 1.7-3.6 1.7-3.7 0 0-3.6-1.4-3.6-5.5zM16.4 5.4c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.7 1.9-.8.9-1.5 2.5-1.3 3.9 1.4.1 2.8-.7 3.7-1.7z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="soon">Coming soon</span>
+    </div>
+    <div class="row" aria-hidden="true">
+      <div class="shot"><img loading="lazy" src="images/shot-01.jpg" alt=""></div>
+      <div class="shot"><img loading="lazy" src="images/shot-12.jpg" alt=""></div>
+      <div class="shot"><img loading="lazy" src="images/shot-11.jpg" alt=""></div>
+      <div class="shot"><img loading="lazy" src="images/shot-09.jpg" alt=""></div>
+      <div class="shot"><img loading="lazy" src="images/shot-06.jpg" alt=""></div>
+    </div>
   </div>
 </section>
 </main>

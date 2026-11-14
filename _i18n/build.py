@@ -10,7 +10,7 @@ def build(lang):
     s=s.replace('<html lang="en">',f'<html lang="{"fr-CA" if lang=="fr" else lang}">',1)
     alt=''.join(f'<link rel="alternate" hreflang="{l}" href="https://boatingdockbook.com/{"" if l=="en" else l+"/"}">\n' for l in L)+'<link rel="alternate" hreflang="x-default" href="https://boatingdockbook.com/">\n'
     s=s.replace('<link rel="icon"',alt+'<link rel="icon"',1)
-    sw='<nav class="lang" aria-label="Language">'+' · '.join(f'<a href="/{"" if l=="en" else l+"/"}" lang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{l.upper()}</a>' for l in L)+'</nav>'
+    sw='<nav class="lang" aria-label="'+{'en':'Language','fr':'Langue','it':'Lingua','es':'Idioma'}[lang]+'">'+' · '.join(f'<a href="/{"" if l=="en" else l+"/"}" lang="{l}"'+(' aria-current="page"' if l==lang else '')+f'>{l.upper()}</a>' for l in L)+'</nav>'
     old='<span class="lang" title="Also in French, Italian and Spanish">EN · FR · IT · ES</span>'
     assert old in s; s=s.replace(old,sw)
     s=s.replace('href="privacy.html"',f'href="/privacy.html#{lang}"')
