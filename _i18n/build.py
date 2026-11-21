@@ -17,7 +17,7 @@ def build(lang):
     s=s.replace('href="terms.html"',f'href="/terms.html#{lang}"')
     # Each language shows its own screenshots (the weather map and forecast, from a real phone, stay in English).
     if lang!='en':
-        s=re.sub(r'src="/images/shot-(\d\d)\.jpg"', lambda m: f'src="/images/{lang}/shot-{m.group(1)}.jpg"' if os.path.exists(os.path.join(os.path.dirname(__file__),'..','images',lang,f'shot-{m.group(1)}.jpg')) else m.group(0), s)
+        s=re.sub(r'src="/images/shot-(\d\d)\.jpg(\?v=\d+)?"', lambda m: f'src="/images/{lang}/shot-{m.group(1)}.jpg{m.group(2) or ""}"' if os.path.exists(os.path.join(os.path.dirname(__file__),'..','images',lang,f'shot-{m.group(1)}.jpg')) else m.group(0), s)
     s=s.replace('.lang{','.lang a{color:inherit;text-decoration:none;padding:2px 2px}\n.lang a[aria-current]{color:#E6C483;font-weight:600}\n.lang a:hover{color:#fff}\n.lang{',1)
     if lang!='en':
         # longest first so a short string never replaces inside a longer one
